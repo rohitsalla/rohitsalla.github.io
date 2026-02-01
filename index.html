@@ -2,82 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohit Kumar Salla | Vision Research Portfolio</title>
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root{
+      --bg: #f5f6f8;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #007acc;
+      --header: #2d2d2d;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --radius: 14px;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
-    header {
-      background-color: #2d2d2d;
+    header{
+      background: var(--header);
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 2.25rem 1rem;
       text-align: center;
     }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
+    header h1{
+      margin: 0 0 .25rem 0;
       font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+      letter-spacing: -0.02em;
     }
 
-    h2 {
-      margin-top: 2rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
+    header p{
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
     }
 
-    p {
-      line-height: 1.6;
+    main{
+      width: min(var(--max), calc(100% - 32px));
+      margin: 2rem auto 2.5rem auto;
     }
 
-    ul.links {
-      list-style-type: none;
+    section{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+    }
+
+    h2{
+      margin: 0 0 .75rem 0;
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: .4rem;
+      letter-spacing: -0.01em;
+    }
+
+    p{ margin: 0 0 .75rem 0; }
+
+    .muted{ color: var(--muted); }
+
+    ul.links{
+      list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin: .25rem 0 0 0;
+      display: grid;
+      gap: .5rem;
     }
 
-    ul.links li {
-      margin: 0.5rem 0;
+    .link-row{
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+      padding: .7rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fafafa;
     }
 
-    a {
-      color: #007acc;
+    a{
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+
+    #location{
+      margin-top: .9rem;
+      font-size: .95rem;
+      color: var(--muted);
     }
 
-    a:hover {
-      text-decoration: underline;
+    #visitor-count{
+      margin-top: .6rem;
     }
 
-    footer {
+    footer{
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    #location {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 1rem;
-    }
-
-    #visitor-count {
-      margin-top: 0.5rem;
+      padding: 1.5rem 1rem 2.5rem 1rem;
+      font-size: .9rem;
+      color: var(--muted);
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Rohit Kumar Salla</h1>
@@ -88,38 +128,59 @@
     <section>
       <h2>About Me</h2>
       <p>
-        I’m deeply interested in <strong>computer vision research</strong>, with experience across areas such as object detection, 3D reconstruction, and multimodal learning. I had the opportunity to intern at <strong>National Chung Cheng University</strong> in Taiwan and was glad to collaborate with exceptional researchers at <strong>Carnegie Mellon University (CMU)</strong>. I am currently at the <strong>Indian Institute of Science (IISc)</strong>, pursuing research in <strong>3D vision</strong>. My academic journey has been shaped by a strong blend of global exposure, research collaboration, and a commitment to solving real-world challenges through AI. I am open to collaboration on research projects.
+        I work on <strong>computer vision</strong> and <strong>multimodal learning</strong>, with experience spanning
+        object detection, 3D vision, and representation learning. I’ve interned at
+        <strong>National Chung Cheng University</strong> (Taiwan), collaborated with researchers at
+        <strong>Carnegie Mellon University (CMU)</strong>, and I’m currently pursuing research at the
+        <strong>Indian Institute of Science (IISc)</strong> with a focus on <strong>3D vision</strong>.
+      </p>
+      <p class="muted">
+        I’m open to collaborations—if you’re working on vision, multimodal AI, or applied perception systems, feel free to reach out.
       </p>
     </section>
 
     <section>
       <h2>Links</h2>
       <ul class="links">
-        <li>📄 <a href="https://rohitsalla.github.io/assets/CV.pdf" download>Download My CV</a></li>
-        <li>🔗 <a href="https://www.linkedin.com/in/rohit-salla" target="_blank">LinkedIn</a></li>
-        <li>💻 <a href="https://github.com/rohitsalla" target="_blank">GitHub</a></li>
-        <li>📧 <a href="mailto:sallarohit1011@gmail.com">sallarohit1011@gmail.com</a></li>
+        <li class="link-row">📄 <a href="https://rohitsalla.github.io/assets/CV.pdf" download>Download My CV</a></li>
+        <li class="link-row">🔗 <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="link-row">💻 <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a></li>
+        <li class="link-row">📧 <a href="mailto:sallarohit1011@gmail.com">sallarohit1011@gmail.com</a></li>
       </ul>
-      <div id="location">🌍 Detecting your location...</div>
+
+      <div id="location">🌍 Detecting your location…</div>
+
       <div id="visitor-count">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=rohitsalla.rohitsalla.github.io" alt="Visitor count">
+        <img
+          src="https://visitor-badge.laobi.icu/badge?page_id=rohitsalla.rohitsalla.github.io"
+          alt="Visitor count"
+        />
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Rohit Kumar Salla. All rights reserved.
+    &copy; <span id="year"></span> Rohit Kumar Salla. All rights reserved.
   </footer>
 
   <script>
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        const loc = document.getElementById('location');
-        loc.textContent = `🌎 You're visiting from ${data.city}, ${data.country_name}`;
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Location (best-effort)
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((data) => {
+        const loc = document.getElementById("location");
+        const city = data && data.city ? data.city : null;
+        const country = data && data.country_name ? data.country_name : null;
+
+        if (city && country) loc.textContent = `🌎 You're visiting from ${city}, ${country}`;
+        else if (country) loc.textContent = `🌎 You're visiting from ${country}`;
+        else loc.textContent = "🌎 Unable to determine your location.";
       })
       .catch(() => {
-        document.getElementById('location').textContent = "🌎 Unable to determine your location.";
+        document.getElementById("location").textContent = "🌎 Unable to determine your location.";
       });
   </script>
 </body>
