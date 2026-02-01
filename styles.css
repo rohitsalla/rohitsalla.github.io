@@ -140,14 +140,13 @@ a:hover{ text-decoration: underline; text-underline-offset: 4px; }
 
 .mobile-menu{
   display: none;
-  gap: .75rem;
   padding: .5rem 0 1.1rem 0;
 }
 
-/* When JS removes [hidden], show it — but only on mobile */
 @media (max-width: 760px){
   .mobile-menu:not([hidden]){
     display: grid;
+    gap: .75rem;
   }
 }
 
