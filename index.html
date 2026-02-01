@@ -1,187 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohit Kumar Salla | Vision Research Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Rohit Kumar Salla — ML/CV researcher. Multimodal AI, VLM reliability, robotics perception." />
+  <title>Rohit Kumar Salla</title>
 
-  <style>
-    :root{
-      --bg: #f5f6f8;
-      --panel: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #007acc;
-      --header: #2d2d2d;
-      --shadow: 0 10px 25px rgba(0,0,0,0.08);
-      --radius: 14px;
-      --max: 860px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    * { box-sizing: border-box; }
-
-    body{
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    header{
-      background: var(--header);
-      color: #fff;
-      padding: 2.25rem 1rem;
-      text-align: center;
-    }
-
-    header h1{
-      margin: 0 0 .25rem 0;
-      font-size: 2.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    header p{
-      margin: 0;
-      color: rgba(255,255,255,0.85);
-      font-weight: 500;
-    }
-
-    main{
-      width: min(var(--max), calc(100% - 32px));
-      margin: 2rem auto 2.5rem auto;
-    }
-
-    section{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.25rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 1rem;
-    }
-
-    h2{
-      margin: 0 0 .75rem 0;
-      font-size: 1.25rem;
-      border-bottom: 2px solid var(--line);
-      padding-bottom: .4rem;
-      letter-spacing: -0.01em;
-    }
-
-    p{ margin: 0 0 .75rem 0; }
-
-    .muted{ color: var(--muted); }
-
-    ul.links{
-      list-style: none;
-      padding: 0;
-      margin: .25rem 0 0 0;
-      display: grid;
-      gap: .5rem;
-    }
-
-    .link-row{
-      display: flex;
-      gap: .6rem;
-      align-items: center;
-      padding: .7rem .85rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    a{
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
-
-    #location{
-      margin-top: .9rem;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-
-    #visitor-count{
-      margin-top: .6rem;
-    }
-
-    footer{
-      text-align: center;
-      padding: 1.5rem 1rem 2.5rem 1rem;
-      font-size: .9rem;
-      color: var(--muted);
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Rohit Kumar Salla</h1>
-    <p>AI Researcher | Computer Vision</p>
+  <!-- =========================
+       HEADER / NAV
+  ========================== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Rohit Kumar Salla</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn ghost" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
+        <button id="menuToggle" class="btn ghost mobile-only" type="button" aria-label="Open menu">
+          <span class="icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu container" hidden>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I work on <strong>computer vision</strong> and <strong>multimodal learning</strong>, with experience spanning
-        object detection, 3D vision, and representation learning. I’ve interned at
-        <strong>National Chung Cheng University</strong> (Taiwan), collaborated with researchers at
-        <strong>Carnegie Mellon University (CMU)</strong>, and I’m currently pursuing research at the
-        <strong>Indian Institute of Science (IISc)</strong> with a focus on <strong>3D vision</strong>.
-      </p>
-      <p class="muted">
-        I’m open to collaborations—if you’re working on vision, multimodal AI, or applied perception systems, feel free to reach out.
-      </p>
+  <main id="top">
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero container">
+      <div class="hero-left">
+        <h1>Rohit Kumar Salla</h1>
+        <p class="hello">Namaste, Hello, Hola</p>
+
+        <p class="lede">
+          I’m an MS student in Computer Engineering at Virginia Tech (TEA Lab), working on multimodal AI,
+          vision-language models, and reliable retrieval & reasoning—spanning robotics perception, VLM diagnostics,
+          and multimodal search.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Drop a mail</a>
+          <a class="btn" href="./CV_Rohit_Salla.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+
+        <div class="quick-links" aria-label="Profile links">
+          <a href="mailto:sallarohit1@gmail.com">Email</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="#publications">Scholar</a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card">
+          <div class="card-title">Research focus</div>
+          <ul class="tags" aria-label="Research areas">
+            <li>Multimodal AI</li>
+            <li>VLM reliability & diagnostics</li>
+            <li>Robotics perception</li>
+            <li>Multimodal retrieval</li>
+            <li>Cryo-ET / medical imaging</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Now</div>
+          <ul class="bullets">
+            <li><strong>Graduate Research Assistant</strong> — TEA Lab, Virginia Tech</li>
+            <li>Gaussian Splatting controllers for manipulation</li>
+            <li>VLM diagnostics & reliability scoring</li>
+          </ul>
+        </div>
+      </aside>
     </section>
 
-    <section>
-      <h2>Links</h2>
-      <ul class="links">
-        <li class="link-row">📄 <a href="https://rohitsalla.github.io/assets/CV.pdf" download>Download My CV</a></li>
-        <li class="link-row">🔗 <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li class="link-row">💻 <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a></li>
-        <li class="link-row">📧 <a href="mailto:sallarohit1011@gmail.com">sallarohit1011@gmail.com</a></li>
-      </ul>
+    <!-- =========================
+         ABOUT
+    ========================== -->
+    <section id="about" class="section container">
+      <h2>About</h2>
 
-      <div id="location">🌍 Detecting your location…</div>
+      <div class="prose">
+        <p>
+          I’m currently a Graduate Research Assistant at Virginia Tech (TEA Lab), advised by Dr. Simon Stepputtis.
+          My recent work includes Gaussian Splatting–based residual feedback control for reaching/manipulation,
+          distributed PyTorch training on A100s, and stability diagnostics for control behavior.
+        </p>
 
-      <div id="visitor-count">
-        <img
-          src="https://visitor-badge.laobi.icu/badge?page_id=rohitsalla.rohitsalla.github.io"
-          alt="Visitor count"
-        />
+        <p>
+          Previously, I worked as a Computer Vision Intern at IISc (Mar–Jun 2025), where I researched transformer-based
+          object detection and developed a small-object–sensitive detector variant (Hi-DETR) with dense supervision and a hybrid encoder.
+        </p>
+
+        <p>
+          I also interned at National Chung Cheng University (Taiwan), where I built a diversity-aware multimodal recommendation
+          system using ViT + BERT embeddings, FAISS retrieval, and fairness/novelty-aware re-ranking.
+        </p>
+
+        <p class="muted">
+          When I’m not coding, you’ll find me reading papers, writing notes, and building research-grade repos that are easy to reproduce.
+        </p>
       </div>
     </section>
+
+    <!-- =========================
+         PUBLICATIONS
+         (IMPORTANT: keep pub-list INSIDE the section)
+    ========================== -->
+    <section id="publications" class="section container">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p class="muted">Manuscripts & submissions (latest first). Replace “Paper/Code” with links when ready.</p>
+      </div>
+
+      <div class="pub-list">
+        <!-- NEW (latest first) -->
+        <article class="pub">
+          <div class="pub-title">Detecting Mixture-Induced Phase Transitions via Internal Training Signals</div>
+          <div class="pub-meta">
+            Rohit Kumar Salla, Manoj Saravanan ·
+            <span class="pub-date">31 Jan 2026</span> (modified: 31 Jan 2026) ·
+            ICLR 2026 Workshop (DATAFM) — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">AURORA-Q: Uncertainty-Guided Test-Time Adaptation</div>
+          <div class="pub-meta">
+            Rohit Kumar Salla, Manoj Saravanan, Shrikar Reddy Kota ·
+            <span class="pub-date">26 Jan 2026</span> (modified: 30 Jan 2026) ·
+            ICLR 2026 Workshop (CAO) — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">Quantifying Cross-Query Contradictions in Multi-Query LLM Reasoning</div>
+          <div class="pub-meta">
+            Rohit Kumar Salla, Ramya Manasa Amancherla, Manoj Saravanan ·
+            <span class="pub-date">17 Jan 2026</span> (modified: 18 Jan 2026) ·
+            ICLR 2026 Workshop (LLM Reasoning) — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">CrossQ: Task-Aligned Cross-Token Conditional Quantization for Late Interaction Retrieval</div>
+          <div class="pub-meta">
+            Rohit Kumar Salla, Manoj Saravanan, Ramya Manasa Amancherla ·
+            <span class="pub-date">13 Jan 2026</span> (modified: 29 Jan 2026) ·
+            ICML 2026 Conference — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems</div>
+          <div class="pub-meta">
+            Manoj Saravanan, Rohit Kumar Salla, Ramya Manasa Amancherla ·
+            <span class="pub-date">05 Jan 2026</span> (modified: 20 Jan 2026) ·
+            ACL ARR 2026 (January) — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">ParaLatent: A Training-Time Framework for Paraphrase-Equivariant Latent Reasoning in Large Language Models</div>
+          <div class="pub-meta">
+            Ramya Manasa Amancherla, Rohit Kumar Salla, Manoj Saravanan ·
+            <span class="pub-date">04 Jan 2026</span> (modified: 21 Jan 2026) ·
+            ACL ARR 2026 (January) — <span class="pill wip">Submission</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <!-- EXISTING (keep) -->
+        <article class="pub">
+          <div class="pub-title">Multiscale Diagnostics of Visual Language Models</div>
+          <div class="pub-meta">
+            ICCV 2025 Workshop on CV4DC — <span class="pill ok">Accepted</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title">Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models</div>
+          <div class="pub-meta">
+            AAAI 2026 Workshop (AIR-FM) — <span class="pill ok">Accepted</span>
+          </div>
+          <div class="pub-links">
+            <a href="#" aria-disabled="true">Paper</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+        <div class="titem">
+          <div class="twhen">Aug 2025 – Present</div>
+          <div class="twhat">
+            <div class="trole">Graduate Research Assistant — TEA Lab, Virginia Tech</div>
+            <ul>
+              <li>Gaussian Splatting–based residual feedback controller for reaching/manipulation.</li>
+              <li>FullFeedbackNet-Large with GRU memory; DDP training on dual A100s (mixed precision).</li>
+              <li>Lyapunov-consistent regularization + stability diagnostics (error decay, trajectories).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="twhen">Mar 2025 – Jun 2025</div>
+          <div class="twhat">
+            <div class="trole">Computer Vision Intern — Indian Institute of Science (IISc)</div>
+            <ul>
+              <li>Transformer-based object detection; hierarchical dense supervision for small objects.</li>
+              <li>Hybrid encoder with multi-scale deformable attention + task-aligned cross-attention.</li>
+              <li>End-to-end perception modules for AGVs; deployment via ROS + OpenCV.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="twhen">Dec 2024 – Mar 2025</div>
+          <div class="twhat">
+            <div class="trole">Research Intern — National Chung Cheng University (Taiwan)</div>
+            <ul>
+              <li>Diversity-aware multimodal recommendation (ViT + BERT) with FAISS retrieval.</li>
+              <li>Fairness/novelty-aware re-ranking and alignment fixes for image–text embeddings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="twhen">Aug 2023 – Sep 2024</div>
+          <div class="twhat">
+            <div class="trole">Research Intern — Taiwan–India Big Data Analytics Lab (SRM University)</div>
+            <ul>
+              <li>CLIP-based multimodal patent retrieval linking patent drawings to abstracts.</li>
+              <li>Long-tail optimization + novelty/fairness metrics for high-precision search.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+    <section id="projects" class="section container">
+      <div class="section-head">
+        <h2>Selected Projects</h2>
+        <p class="muted">A few projects I’m proud of (swap these with your newest repos anytime).</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-title">Backprop NEAT (JAX)</div>
+          <p class="muted">
+            Integrated NEAT with backpropagation to evolve architectures and optimize weights simultaneously.
+            Validated on XOR / circle / spiral; managed complexity vs overfitting.
+          </p>
+          <div class="card-links">
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Multiagent Debate for Visual Reasoning</div>
+          <p class="muted">
+            Multi-round debate protocol for vision models (ViT/CLIP) to reduce hallucinations and improve reasoning consistency on VQA-style tasks.
+          </p>
+          <div class="card-links">
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Hieroglyph Generation (LoRA)</div>
+          <p class="muted">
+            Fine-tuned Stable Diffusion with LoRA + custom tokenizer for culturally faithful hieroglyph generation.
+          </p>
+          <div class="card-links">
+            <a href="#" aria-disabled="true">Writeup</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title">NeuroEvolution Slime Volleyball AI</div>
+          <p class="muted">
+            End-to-end evolutionary system (mutation/crossover/speciation/self-play) producing agents that beat baselines with adaptive strategies.
+          </p>
+          <div class="card-links">
+            <a href="#" aria-disabled="true">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         AWARDS
+    ========================== -->
+    <section id="awards" class="section container">
+      <h2>Awards & Activities</h2>
+      <ul class="bullets">
+        <li>AAAI 2026 travel grant recipient.</li>
+        <li>TFP Winter Scholarship (Virginia Tech) to attend AAAI 2026.</li>
+        <li>Qualified for Round 2 of Google Code Jam (2022).</li>
+      </ul>
+
+      <div class="mini">
+        <h3>Skills</h3>
+        <div class="skill-row">
+          <span><strong>Languages:</strong> Python, C++, Bash, JavaScript</span>
+          <span><strong>Frameworks:</strong> PyTorch, TensorFlow, JAX</span>
+          <span><strong>Tools:</strong> OpenCV, Open3D, Git, Docker, MLflow, DVC</span>
+          <span><strong>Compute:</strong> AWS, Colab, NVIDIA Jetson</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section id="contact" class="section container">
+      <div class="contact-card">
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">If you’d like to collaborate or discuss research, feel free to email me.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:sallarohit1@gmail.com">sallarohit1@gmail.com</a>
+          <div class="quick-links">
+            <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="./CV_Rohit_Salla.pdf" target="_blank" rel="noopener">CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer container">
+      <span>© <span id="year"></span> Rohit Kumar Salla</span>
+      <span class="muted">Built with HTML/CSS/JS • Fast, minimal, deployable.</span>
+    </footer>
   </main>
 
-  <footer>
-    &copy; <span id="year"></span> Rohit Kumar Salla. All rights reserved.
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Location (best-effort)
-    fetch("https://ipapi.co/json/")
-      .then((r) => r.json())
-      .then((data) => {
-        const loc = document.getElementById("location");
-        const city = data && data.city ? data.city : null;
-        const country = data && data.country_name ? data.country_name : null;
-
-        if (city && country) loc.textContent = `🌎 You're visiting from ${city}, ${country}`;
-        else if (country) loc.textContent = `🌎 You're visiting from ${country}`;
-        else loc.textContent = "🌎 Unable to determine your location.";
-      })
-      .catch(() => {
-        document.getElementById("location").textContent = "🌎 Unable to determine your location.";
-      });
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
