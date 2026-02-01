@@ -138,14 +138,24 @@ a:hover{ text-decoration: underline; text-underline-offset: 4px; }
 
 .icon{ font-size: 1.1rem; }
 
-/* Mobile menu */
-.mobile-only{ display: none; }
-
 .mobile-menu{
-  display: grid;
+  display: none;
   gap: .75rem;
   padding: .5rem 0 1.1rem 0;
 }
+
+/* When JS removes [hidden], show it — but only on mobile */
+@media (max-width: 760px){
+  .mobile-menu:not([hidden]){
+    display: grid;
+  }
+}
+
+/* Ensure hidden always stays hidden */
+.mobile-menu[hidden]{
+  display: none !important;
+}
+
 .mobile-menu a{
   padding: .75rem 1rem;
   border: 1px solid var(--line);
