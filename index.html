@@ -1,392 +1,640 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Rohit Salla — AI Research" />
-  <title>Rohit Kumar Salla</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rohit Kumar Salla</title>
+<meta name="description" content="Rohit Kumar Salla — MS in Computer Engineering, Virginia Tech. Research in machine learning, computer vision, and reinforcement learning." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./styles.css" />
+<style>
+  :root {
+    --bg:        #f3eee2;
+    --bg-deep:   #ede7d6;
+    --paper:     #faf6ec;
+    --ink:       #1c1814;
+    --ink-soft:  #3a342c;
+    --mute:      #7a6f5e;
+    --rule:      #d4cab4;
+    --accent:    #7a1f17;
+    --accent-2:  #b54a1a;
+    --highlight: #f7e89d;
+    --shadow:    0 1px 0 rgba(28,24,20,0.04), 0 8px 24px -12px rgba(28,24,20,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.55;
+    font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(rgba(122,111,94,0.05) 1px, transparent 1px),
+      radial-gradient(rgba(122,111,94,0.04) 1px, transparent 1px);
+    background-size: 32px 32px, 16px 16px;
+    background-position: 0 0, 8px 8px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at top, rgba(255,255,255,0.5), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(28,24,20,0.05), transparent 60%);
+    z-index: -1;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(122,31,23,0.25);
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+  }
+  a:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 64px 32px 96px; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 56px;
+  }
+  .eyebrow .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .eyebrow nav a { border: none; margin-left: 18px; color: var(--mute); font-family: 'JetBrains Mono', monospace; }
+  .eyebrow nav a:hover { color: var(--accent); }
+
+  /* HERO */
+  header.hero {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+
+  h1.name {
+    font-family: 'Fraunces', serif;
+    font-weight: 380;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  h1.name .italic {
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    color: var(--accent);
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 12px;
+  }
+
+  .lede {
+    font-family: 'Newsreader', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 0 28px;
+    font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
+  }
+  .lede em { color: var(--accent); font-style: italic; }
+
+  .hero-links { display: flex; flex-wrap: wrap; align-items: center; }
+  .hero-links a {
+    border: none;
+    padding: 6px 14px 6px 0;
+    margin-right: 14px;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 17px;
+    position: relative;
+  }
+  .hero-links a:not(:last-child)::after {
+    content: "/";
+    color: var(--rule);
+    margin-left: 14px;
+    font-style: normal;
+  }
+
+  /* Monogram */
+  .monogram {
+    aspect-ratio: 1 / 1;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .monogram::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .monogram .mono-mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144;
+    font-size: 88px;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.05em;
+  }
+  .monogram .mono-mark span { color: var(--accent); font-style: italic; }
+  .monogram .mono-meta {
+    position: absolute;
+    bottom: 14px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .monogram .corner-mark {
+    position: absolute;
+    top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .monogram .corner-mark.left  { left: 14px; }
+  .monogram .corner-mark.right { right: 14px; }
+
+  /* Section */
+  section { margin-top: 64px; }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  h2.section-title .italic { font-style: italic; color: var(--accent); }
+  h2.section-title + .section-rule {
+    height: 1px;
+    background: var(--rule);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  h2.section-title + .section-rule::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    height: 1px;
+    width: 64px;
+    background: var(--accent);
+  }
+  .section-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 14px;
+  }
+
+  /* NEWS */
+  .news {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(212,202,180,0.5);
+  }
+  .news:last-child { border-bottom: none; }
+  .news-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mute);
+    padding-top: 4px;
+  }
+  .news-body {
+    font-family: 'Newsreader', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .news-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .news-body .pill {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(247,232,157,0.55);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: 2px;
+  }
+  .news-body .accent-text { color: var(--accent); font-style: italic; }
+
+  /* Publications */
+  .pub-group { margin-bottom: 36px; }
+  .year-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--mute);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .year-mark::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(212,202,180,0.5);
+    transition: background .18s ease;
+  }
+  .pub:hover {
+    background: linear-gradient(90deg, rgba(247,232,157,0.18), transparent 70%);
+  }
+
+  .pub-marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+    line-height: 1.5;
+    padding-top: 4px;
+  }
+  .pub-marker .num {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    margin-bottom: 4px;
+    letter-spacing: 0;
+  }
+
+  .pub-title {
+    font-family: 'Newsreader', serif;
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+  }
+  .pub-title .accent-word {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 6px;
+    font-family: 'Newsreader', serif;
+  }
+  .venue {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(247,232,157,0.45);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .ws-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+    border: 1px solid var(--rule);
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  /* Footer */
+  footer.colophon {
+    margin-top: 88px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  footer.colophon .set { display: flex; gap: 18px; flex-wrap: wrap; }
+  footer.colophon a { color: var(--mute); border: none; }
+  footer.colophon a:hover { color: var(--accent); }
+  footer.colophon .imprint {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--mute);
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .reveal.d1 { animation-delay: 0.05s; }
+  .reveal.d2 { animation-delay: 0.18s; }
+  .reveal.d3 { animation-delay: 0.30s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  ::selection { background: var(--highlight); color: var(--ink); }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 32px 22px 64px; }
+    header.hero { grid-template-columns: 1fr; gap: 32px; }
+    .monogram { max-width: 160px; order: -1; }
+    .pub { grid-template-columns: 56px 1fr; gap: 16px; }
+    .pub-marker .num { font-size: 20px; }
+    .news { grid-template-columns: 80px 1fr; gap: 14px; }
+    h1.name { font-size: 48px; }
+    h2.section-title { font-size: 26px; }
+    .eyebrow nav { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .lede { font-size: 17px; }
+    .pub-title { font-size: 17px; }
+  }
+</style>
 </head>
-
 <body>
-  <!-- =========================
-       HEADER / NAV
-  ========================== -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Rohit Kumar Salla</span>
-      </a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<div class="wrap">
 
-      <div class="nav-actions">
-        <button id="themeToggle" class="btn ghost" type="button" aria-label="Toggle theme">
-          <span class="icon" aria-hidden="true">☾</span>
-        </button>
-        <button id="menuToggle" class="btn ghost mobile-only" type="button" aria-label="Open menu">
-          <span class="icon" aria-hidden="true">☰</span>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobileMenu" class="mobile-menu container hidden">
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#awards">Awards</a>
+  <!-- EYEBROW -->
+  <div class="eyebrow reveal">
+    <div><span class="dot"></span>Rohit Kumar Salla &nbsp;·&nbsp; ML Researcher</div>
+    <nav>
+      <a href="#research">Publications</a>
       <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="tag reveal d1">MS Computer Engineering · Virginia Tech</div>
+      <h1 class="name reveal d1">Rohit Kumar <span class="italic">Salla</span></h1>
+      <p class="lede reveal d2">
+        I work at the intersection of <em>machine learning</em>, <em>computer vision</em>, and <em>reinforcement learning</em> — with a particular interest in retrieval systems, transformer-based perception, and policies that know when to stop thinking. Currently pursuing my Master's in Computer Engineering at Virginia Tech.
+      </p>
+      <p class="hero-links reveal d3">
+        <a href="mailto:rohitsalla@vt.edu">Email</a>
+        <a href="data/CV_Rohit_Salla.pdf">CV</a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+    <div class="monogram reveal d2" aria-hidden="true">
+      <span class="corner-mark left">RKS</span>
+      <span class="corner-mark right">2026</span>
+      <div class="mono-mark">R<span>S</span></div>
+      <div class="mono-meta">— Blacksburg, VA —</div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- =========================
-         HERO
-    ========================== -->
-    <section class="hero container">
-      <div class="hero-left">
-        <h1>Rohit Kumar Salla</h1>
-        <p class="hello">Namaste, Hello, Hola</p>
+  <!-- PUBLICATIONS -->
+  <section id="research">
+    <div class="section-meta">§ I — Selected Publications</div>
+    <h2 class="section-title">Research <span class="italic">&amp;</span> Publications</h2>
+    <div class="section-rule"></div>
 
-        <p class="lede">
-          I’m an MS student in Computer Engineering at Virginia Tech.
-        </p>
+    <div class="pub-group">
+      <div class="year-mark">— 2026 · Conference Papers</div>
 
-        <div class="hero-cta">
-          <a class="btn primary" href="#contact">Drop a mail</a>
-          <a class="btn" href="./assets/CV_Rohit_Salla (2).pdf" target="_blank" rel="noopener">Download CV</a>
-        </div>
-
-        <div class="quick-links" aria-label="Profile links">
-          <a href="mailto:sallarohit1@gmail.com">Email</a>
-          <span class="sep" aria-hidden="true">•</span>
-          <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
-          <span class="sep" aria-hidden="true">•</span>
-          <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="sep" aria-hidden="true">•</span>
-          <a href="#publications">Scholar</a>
-        </div>
-      </div>
-
-      <aside class="hero-right">
-        <div class="card">
-          <div class="card-title">Research focus</div>
-          <ul class="tags" aria-label="Research areas">
-            <li>Multimodal AI</li>
-            <li>VLM reliability & diagnostics</li>
-            <li>Robotics perception</li>
-            <li>Multimodal retrieval</li>
-            <li>Cryo-ET / medical imaging</li>
-          </ul>
-        </div>
-
-      </aside>
-    </section>
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-    <section id="about" class="section container">
-      <h2>About</h2>
-
-      <div class="prose">
-        <p>
-          I’m currently MS Student at Virginia Tech.
-        </p>
-        <p>
-          Previously, I worked as a Computer Vision Intern at IISc (Mar–Jun 2025), where I researched transformer-based
-          object detection and developed a small-object–sensitive detector variant (Hi-DETR) with dense supervision and a hybrid encoder.
-        </p>
-
-        <p>
-          I also interned at National Chung Cheng University (Taiwan), where I built a diversity-aware multimodal recommendation
-          system using ViT + BERT embeddings, FAISS retrieval, and fairness/novelty-aware re-ranking.
-        </p>
-
-        <p class="muted">
-          When I’m not coding, you’ll find me reading papers, writing notes, and building research-grade repos that are easy to reproduce.
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================
-         PUBLICATIONS
-         (IMPORTANT: keep pub-list INSIDE the section)
-    ========================== -->
-    <section id="publications" class="section container">
-      <div class="section-head">
-        <h2>Publications</h2>
-        <p class="muted">Manuscripts & submissions (latest first). Replace “Paper/Code” with links when ready.</p>
-      </div>
-
-      <div class="pub-list">
-        <!-- NEW (latest first) -->
-        <article class="pub">
-          <div class="pub-title">Detecting Mixture-Induced Phase Transitions via Internal Training Signals</div>
-          <div class="pub-meta">
-            Rohit Kumar Salla, Manoj Saravanan ·
-            <span class="pub-date">31 Jan 2026</span> (modified: 31 Jan 2026) ·
-            ICLR 2026 Workshop (DATAFM) — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">AURORA-Q: Uncertainty-Guided Test-Time Adaptation</div>
-          <div class="pub-meta">
-            Rohit Kumar Salla, Manoj Saravanan, Shrikar Reddy Kota ·
-            <span class="pub-date">26 Jan 2026</span> (modified: 30 Jan 2026) ·
-            ICLR 2026 Workshop (CAO) — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">Quantifying Cross-Query Contradictions in Multi-Query LLM Reasoning</div>
-          <div class="pub-meta">
-            Rohit Kumar Salla, Ramya Manasa Amancherla, Manoj Saravanan ·
-            <span class="pub-date">17 Jan 2026</span> (modified: 18 Jan 2026) ·
-            ICLR 2026 Workshop (LLM Reasoning) — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">CrossQ: Task-Aligned Cross-Token Conditional Quantization for Late Interaction Retrieval</div>
-          <div class="pub-meta">
-            Rohit Kumar Salla, Manoj Saravanan, Ramya Manasa Amancherla ·
-            <span class="pub-date">13 Jan 2026</span> (modified: 29 Jan 2026) ·
-            ICML 2026 Conference — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems</div>
-          <div class="pub-meta">
-            Manoj Saravanan, Rohit Kumar Salla, Ramya Manasa Amancherla ·
-            <span class="pub-date">05 Jan 2026</span> (modified: 20 Jan 2026) ·
-            ACL ARR 2026 (January) — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">ParaLatent: A Training-Time Framework for Paraphrase-Equivariant Latent Reasoning in Large Language Models</div>
-          <div class="pub-meta">
-            Ramya Manasa Amancherla, Rohit Kumar Salla, Manoj Saravanan ·
-            <span class="pub-date">04 Jan 2026</span> (modified: 21 Jan 2026) ·
-            ACL ARR 2026 (January) — <span class="pill wip">Submission</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <!-- EXISTING (keep) -->
-        <article class="pub">
-          <div class="pub-title">Multiscale Diagnostics of Visual Language Models</div>
-          <div class="pub-meta">
-            ICCV 2025 Workshop on CV4DC — <span class="pill ok">Accepted</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-title">Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models</div>
-          <div class="pub-meta">
-            AAAI 2026 Workshop (AIR-FM) — <span class="pill ok">Accepted</span>
-          </div>
-          <div class="pub-links">
-            <a href="#" aria-disabled="true">Paper</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================
-         EXPERIENCE
-    ========================== -->
-    <section id="experience" class="section container">
-      <h2>Experience</h2>
-
-        <div class="titem">
-          <div class="twhen">Mar 2025 – Jun 2025</div>
-          <div class="twhat">
-            <div class="trole">Computer Vision Intern — Indian Institute of Science (IISc)</div>
-            <ul>
-              <li>Transformer-based object detection; hierarchical dense supervision for small objects.</li>
-              <li>Hybrid encoder with multi-scale deformable attention + task-aligned cross-attention.</li>
-              <li>End-to-end perception modules for AGVs; deployment via ROS + OpenCV.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="titem">
-          <div class="twhen">Dec 2024 – Mar 2025</div>
-          <div class="twhat">
-            <div class="trole">Research Intern — National Chung Cheng University (Taiwan)</div>
-            <ul>
-              <li>Diversity-aware multimodal recommendation (ViT + BERT) with FAISS retrieval.</li>
-              <li>Fairness/novelty-aware re-ranking and alignment fixes for image–text embeddings.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="titem">
-          <div class="twhen">Aug 2023 – Sep 2024</div>
-          <div class="twhat">
-            <div class="trole">Research Intern — Taiwan–India Big Data Analytics Lab (SRM University)</div>
-            <ul>
-              <li>CLIP-based multimodal patent retrieval linking patent drawings to abstracts.</li>
-              <li>Long-tail optimization + novelty/fairness metrics for high-precision search.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-    <section id="projects" class="section container">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
-        <p class="muted">A few projects I’m proud of (swap these with your newest repos anytime).</p>
-      </div>
-
-      <div class="grid">
-        <article class="card">
-          <div class="card-title">Backprop NEAT (JAX)</div>
-          <p class="muted">
-            Integrated NEAT with backpropagation to evolve architectures and optimize weights simultaneously.
-            Validated on XOR / circle / spiral; managed complexity vs overfitting.
-          </p>
-          <div class="card-links">
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-title">Multiagent Debate for Visual Reasoning</div>
-          <p class="muted">
-            Multi-round debate protocol for vision models (ViT/CLIP) to reduce hallucinations and improve reasoning consistency on VQA-style tasks.
-          </p>
-          <div class="card-links">
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-title">Hieroglyph Generation (LoRA)</div>
-          <p class="muted">
-            Fine-tuned Stable Diffusion with LoRA + custom tokenizer for culturally faithful hieroglyph generation.
-          </p>
-          <div class="card-links">
-            <a href="#" aria-disabled="true">Writeup</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-title">NeuroEvolution Slime Volleyball AI</div>
-          <p class="muted">
-            End-to-end evolutionary system (mutation/crossover/speciation/self-play) producing agents that beat baselines with adaptive strategies.
-          </p>
-          <div class="card-links">
-            <a href="#" aria-disabled="true">Code</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================
-         AWARDS
-    ========================== -->
-    <section id="awards" class="section container">
-      <h2>Awards & Activities</h2>
-      <ul class="bullets">
-        <li>AAAI 2026 travel grant recipient.</li>
-        <li>TFP Winter Scholarship (Virginia Tech) to attend AAAI 2026.</li>
-        <li>Qualified for Round 2 of Google Code Jam (2022).</li>
-      </ul>
-
-      <div class="mini">
-        <h3>Skills</h3>
-        <div class="skill-row">
-          <span><strong>Languages:</strong> Python, C++, Bash, JavaScript</span>
-          <span><strong>Frameworks:</strong> PyTorch, TensorFlow, JAX</span>
-          <span><strong>Tools:</strong> OpenCV, Open3D, Git, Docker, MLflow, DVC</span>
-          <span><strong>Compute:</strong> AWS, Colab, NVIDIA Jetson</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-    <section id="contact" class="section container">
-      <div class="contact-card">
+      <article class="pub">
+        <div class="pub-marker"><span class="num">01</span></div>
         <div>
-          <h2>Contact</h2>
-          <p class="muted">If you’d like to collaborate or discuss research, feel free to email me.</p>
-        </div>
-
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:sallarohit1011@gmail.com">sallarohit1011@gmail.com</a>
-          <div class="quick-links">
-            <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="https://www.linkedin.com/in/rohit-salla" target="_blank" rel="noopener">LinkedIn</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="./CV_Rohit_Salla.pdf" target="_blank" rel="noopener">CV</a>
+          <h3 class="pub-title"><span class="accent-word">AURORA:</span> Neuro-Symbolic Continual Indexing for Evolving RAG Systems</h3>
+          <div class="pub-meta">
+            <span class="venue">Association for Computational Linguistics — ACL 2026</span>
+            <span class="status">Accepted</span>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <footer class="footer container">
-      <span>© <span id="year"></span> Rohit Kumar Salla</span>
-    </footer>
-  </main>
+      <article class="pub">
+        <div class="pub-marker"><span class="num">02</span></div>
+        <div>
+          <h3 class="pub-title"><span class="accent-word">CrossQ:</span> Task-Aligned Cross-Token Conditional Quantization for Late Interaction Retrieval</h3>
+          <div class="pub-meta">
+            <span class="venue">International Conference on Machine Learning — ICML 2026</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
 
-  <script src="./script.js"></script>
+      <article class="pub">
+        <div class="pub-marker"><span class="num">03</span></div>
+        <div>
+          <h3 class="pub-title">Learning When to Stop: <span class="accent-word">Prefix-Optimal Dynamic Diffusion Policies</span> for Continuous Control</h3>
+          <div class="pub-meta">
+            <span class="venue">Reinforcement Learning Conference — RLC 2026</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">04</span></div>
+        <div>
+          <h3 class="pub-title">When Can Pure Exploitation Succeed in Linear RL? <span class="accent-word">Decoys and Self-Identifiability</span> for Greedy LSVI</h3>
+          <div class="pub-meta">
+            <span class="venue">Reinforcement Learning Conference — RLC 2026</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="pub-group">
+      <div class="year-mark">— 2025 · Conference Papers</div>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">05</span></div>
+        <div>
+          <h3 class="pub-title">Multimodal Patent Retrieval: <span class="accent-word">Integrating Text and Images</span> with Long-Tail Optimization Techniques</h3>
+          <div class="pub-meta">
+            <span class="venue">ICCCNT 2025</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="pub-group">
+      <div class="year-mark">— Workshop Papers</div>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">06</span></div>
+        <div>
+          <h3 class="pub-title">Quantifying <span class="accent-word">Cross-Query Contradictions</span> in Multi-Query LLM Reasoning</h3>
+          <div class="pub-meta">
+            <span class="venue">ICLR 2026 Workshop on LLM Reasoning</span>
+            <span class="ws-tag">Workshop</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">07</span></div>
+        <div>
+          <h3 class="pub-title"><span class="accent-word">Multiscale Diagnostics</span> of Visual Language Models</h3>
+          <div class="pub-meta">
+            <span class="venue">ICCV 2025 Workshop · CV4DC</span>
+            <span class="ws-tag">Workshop</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">08</span></div>
+        <div>
+          <h3 class="pub-title"><span class="accent-word">Curate, Don't Augment:</span> Budgeted Multimodal Intervention Design for Invariant Vision–Language Learning</h3>
+          <div class="pub-meta">
+            <span class="venue">CVPR 2026 Workshop</span>
+            <span class="ws-tag">Workshop</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-marker"><span class="num">09</span></div>
+        <div>
+          <h3 class="pub-title">Beyond Hallucinations: A <span class="accent-word">Composite Score</span> for Measuring Reliability in Open-Source LLMs</h3>
+          <div class="pub-meta">
+            <span class="venue">AAAI 2026 Workshop · AIR-FM</span>
+            <span class="ws-tag">Workshop</span>
+            <span class="status">Accepted</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="colophon">
+    <div class="set">
+      <a href="mailto:rohitsalla@vt.edu">rohitsalla@vt.edu</a>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="imprint">
+      Set in Fraunces &amp; Newsreader. Last updated 2026.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp 0.8s ease forwards';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.pub-group, .news, .colophon').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    obs.observe(el);
+  });
+</script>
+
 </body>
 </html>
