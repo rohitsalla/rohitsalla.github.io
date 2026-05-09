@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rohit Kumar Salla</title>
-<meta name="description" content="Rohit Kumar Salla — MS in Computer Engineering, Virginia Tech. Research in machine learning, computer vision, and reinforcement learning." />
+<title>Rohit Salla</title>
+<meta name="description" content="Rohit Salla — MS in Computer Engineering, Virginia Tech. Robot learning, ML, retrieval systems, and RL reasoning." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,13 +12,12 @@
 
 <style>
   :root {
-    --bg:        #f3eee2;
-    --bg-deep:   #ede7d6;
-    --paper:     #faf6ec;
+    --bg:        #ffffff;
+    --paper:     #fafaf7;
     --ink:       #1c1814;
     --ink-soft:  #3a342c;
     --mute:      #7a6f5e;
-    --rule:      #d4cab4;
+    --rule:      #e6e0d2;
     --accent:    #7a1f17;
     --accent-2:  #b54a1a;
     --highlight: #f7e89d;
@@ -38,11 +37,6 @@
     font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    background-image:
-      radial-gradient(rgba(122,111,94,0.05) 1px, transparent 1px),
-      radial-gradient(rgba(122,111,94,0.04) 1px, transparent 1px);
-    background-size: 32px 32px, 16px 16px;
-    background-position: 0 0, 8px 8px;
   }
 
   body::before {
@@ -51,8 +45,7 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at top, rgba(255,255,255,0.5), transparent 60%),
-      radial-gradient(ellipse at bottom, rgba(28,24,20,0.05), transparent 60%);
+      radial-gradient(ellipse at bottom, rgba(28,24,20,0.025), transparent 60%);
     z-index: -1;
   }
 
@@ -93,20 +86,20 @@
   /* HERO */
   header.hero {
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 220px;
     gap: 48px;
-    align-items: end;
-    margin-bottom: 72px;
+    align-items: start;
+    margin-bottom: 56px;
   }
 
   h1.name {
     font-family: 'Fraunces', serif;
     font-weight: 380;
     font-variation-settings: "opsz" 144, "SOFT" 50;
-    font-size: clamp(42px, 7vw, 76px);
+    font-size: clamp(42px, 7vw, 72px);
     line-height: 0.96;
     letter-spacing: -0.02em;
-    margin: 0 0 24px;
+    margin: 0 0 20px;
     color: var(--ink);
   }
   h1.name .italic {
@@ -125,21 +118,21 @@
     margin-bottom: 12px;
   }
 
-  .lede {
+  .bio {
     font-family: 'Newsreader', serif;
-    font-size: 19px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.65;
     color: var(--ink-soft);
-    max-width: 56ch;
-    margin: 0 0 28px;
+    margin: 0 0 18px;
     font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
   }
-  .lede em { color: var(--accent); font-style: italic; }
+  .bio em { color: var(--accent); font-style: italic; }
+  .bio a { color: var(--accent); border-bottom-color: rgba(122,31,23,0.3); }
 
-  .hero-links { display: flex; flex-wrap: wrap; align-items: center; }
+  .hero-links { display: flex; flex-wrap: wrap; align-items: center; margin-top: 22px; }
   .hero-links a {
     border: none;
-    padding: 6px 14px 6px 0;
+    padding: 6px 0;
     margin-right: 14px;
     font-family: 'Newsreader', serif;
     font-style: italic;
@@ -153,67 +146,43 @@
     font-style: normal;
   }
 
-  /* Monogram */
-  .monogram {
+  /* Photo */
+  .photo-frame {
     aspect-ratio: 1 / 1;
     background: var(--paper);
     border: 1px solid var(--rule);
     box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    padding: 8px;
   }
-  .monogram::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 1px solid var(--rule);
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 2px;
-    pointer-events: none;
+    display: block;
   }
-  .monogram .mono-mark {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-variation-settings: "opsz" 144;
-    font-size: 88px;
-    line-height: 1;
-    color: var(--ink);
-    letter-spacing: -0.05em;
-  }
-  .monogram .mono-mark span { color: var(--accent); font-style: italic; }
-  .monogram .mono-meta {
-    position: absolute;
-    bottom: 14px; left: 0; right: 0;
-    text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mute);
-  }
-  .monogram .corner-mark {
-    position: absolute;
-    top: 14px;
+  .photo-meta {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--mute);
   }
-  .monogram .corner-mark.left  { left: 14px; }
-  .monogram .corner-mark.right { right: 14px; }
 
   /* Section */
-  section { margin-top: 64px; }
+  section { margin-top: 56px; }
 
   h2.section-title {
     font-family: 'Fraunces', serif;
     font-weight: 400;
     font-variation-settings: "opsz" 144;
-    font-size: 32px;
+    font-size: 30px;
     letter-spacing: -0.01em;
     margin: 0 0 4px;
     color: var(--ink);
@@ -222,7 +191,7 @@
   h2.section-title + .section-rule {
     height: 1px;
     background: var(--rule);
-    margin-bottom: 28px;
+    margin-bottom: 26px;
     position: relative;
   }
   h2.section-title + .section-rule::after {
@@ -242,47 +211,101 @@
     margin-bottom: 14px;
   }
 
-  /* NEWS */
-  .news {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 24px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(212,202,180,0.5);
+  /* Research Interests prose */
+  .interests p {
+    font-family: 'Newsreader', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
   }
-  .news:last-child { border-bottom: none; }
-  .news-date {
+  .interests p em { color: var(--accent); font-style: italic; }
+  .interests p strong { color: var(--ink); font-weight: 500; }
+
+  .keyword-row {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .keyword-row span {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--mute);
-    padding-top: 4px;
-  }
-  .news-body {
-    font-family: 'Newsreader', serif;
-    font-size: 17px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-  }
-  .news-body strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .news-body .pill {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(247,232,157,0.55);
-    padding: 2px 7px;
+    border: 1px solid var(--rule);
+    background: rgba(250,246,236,0.6);
+    padding: 5px 10px;
     border-radius: 2px;
-    margin-right: 6px;
-    vertical-align: 2px;
   }
-  .news-body .accent-text { color: var(--accent); font-style: italic; }
+
+  /* AFFILIATIONS */
+  .affil-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .affil {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 16px 10px 14px;
+    text-align: center;
+    position: relative;
+    transition: transform .2s ease, box-shadow .2s ease;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 140px;
+  }
+  .affil:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+    color: inherit;
+  }
+  .affil .seal {
+    width: 40px;
+    height: 40px;
+    margin: 4px auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144;
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    background: rgba(247,232,157,0.18);
+  }
+  .affil .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144;
+    font-size: 14px;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+  }
+  .affil .name em { color: var(--accent); font-style: italic; }
+  .affil .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+    line-height: 1.4;
+  }
 
   /* Publications */
   .pub-group { margin-bottom: 36px; }
@@ -306,9 +329,9 @@
 
   .pub {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 140px 1fr;
     gap: 24px;
-    padding: 18px 0;
+    padding: 20px 0;
     border-bottom: 1px solid rgba(212,202,180,0.5);
     transition: background .18s ease;
   }
@@ -316,24 +339,28 @@
     background: linear-gradient(90deg, rgba(247,232,157,0.18), transparent 70%);
   }
 
-  .pub-marker {
+  .pub-thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 2px;
+  }
+  .thumb {
+    width: 130px;
+    height: 130px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper);
+    display: block;
+    box-shadow: 0 1px 0 rgba(28,24,20,0.04), 0 4px 14px -8px rgba(28,24,20,0.18);
+  }
+  .thumb-cap {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
+    font-size: 9px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--mute);
-    line-height: 1.5;
-    padding-top: 4px;
-  }
-  .pub-marker .num {
-    display: block;
-    font-family: 'Fraunces', serif;
-    font-size: 24px;
-    color: var(--ink);
-    font-variation-settings: "opsz" 144;
-    font-weight: 300;
-    margin-bottom: 4px;
-    letter-spacing: 0;
   }
 
   .pub-title {
@@ -345,11 +372,7 @@
     margin: 0 0 6px;
     letter-spacing: -0.005em;
   }
-  .pub-title .accent-word {
-    color: var(--accent);
-    font-style: italic;
-    font-weight: 500;
-  }
+  .pub-title .accent-word { color: var(--accent); font-style: italic; font-weight: 500; }
 
   .pub-meta {
     display: flex;
@@ -359,11 +382,7 @@
     margin-top: 6px;
     font-family: 'Newsreader', serif;
   }
-  .venue {
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 16px;
-  }
+  .venue { font-style: italic; color: var(--ink-soft); font-size: 16px; }
   .status {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -385,10 +404,28 @@
     border-radius: 2px;
   }
 
+  /* Coffee CTA */
+  .coffee {
+    margin-top: 56px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    font-family: 'Newsreader', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .coffee strong { color: var(--ink); font-weight: 500; }
+  .coffee em { color: var(--accent); font-style: italic; }
+  .coffee a { color: var(--accent); }
+
   /* Footer */
   footer.colophon {
-    margin-top: 88px;
-    padding-top: 32px;
+    margin-top: 72px;
+    padding-top: 28px;
     border-top: 1px solid var(--rule);
     display: flex;
     flex-wrap: wrap;
@@ -429,19 +466,21 @@
   @media (max-width: 720px) {
     .wrap { padding: 32px 22px 64px; }
     header.hero { grid-template-columns: 1fr; gap: 32px; }
-    .monogram { max-width: 160px; order: -1; }
-    .pub { grid-template-columns: 56px 1fr; gap: 16px; }
-    .pub-marker .num { font-size: 20px; }
-    .news { grid-template-columns: 80px 1fr; gap: 14px; }
-    h1.name { font-size: 48px; }
+    .photo-frame { max-width: 200px; order: -1; }
+    .pub { grid-template-columns: 96px 1fr; gap: 14px; }
+    .thumb { width: 88px; height: 88px; }
+    .thumb-cap { font-size: 8px; }
+    h1.name { font-size: 44px; }
     h2.section-title { font-size: 26px; }
     .eyebrow nav { display: none; }
+    .affil-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 480px) {
     body { font-size: 16px; }
-    .lede { font-size: 17px; }
+    .bio { font-size: 17px; }
     .pub-title { font-size: 17px; }
+    .affil-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   }
 </style>
 </head>
@@ -451,40 +490,130 @@
 
   <!-- EYEBROW -->
   <div class="eyebrow reveal">
-    <div><span class="dot"></span>Rohit Kumar Salla &nbsp;·&nbsp; ML Researcher</div>
+    <div><span class="dot"></span>Rohit Salla &nbsp;·&nbsp;</div>
     <nav>
-      <a href="#research">Publications</a>
-      <a href="#contact">Contact</a>
+      <a href="CV_Rohit_Salla (6).pdf">CV</a>
+      <a href="#publications">Publications</a>
+      <a href="notes.html">Notes</a>
     </nav>
   </div>
 
   <!-- HERO -->
   <header class="hero">
     <div>
-      <div class="tag reveal d1">MS Computer Engineering · Virginia Tech</div>
-      <h1 class="name reveal d1">Rohit Kumar <span class="italic">Salla</span></h1>
-      <p class="lede reveal d2">
-        I work at the intersection of <em>machine learning</em>, <em>computer vision</em>, and <em>reinforcement learning</em> — with a particular interest in retrieval systems, transformer-based perception, and policies that know when to stop thinking. Currently pursuing my Master's in Computer Engineering at Virginia Tech.
+      <h1 class="name reveal d1">Rohit <span class="italic">Salla</span></h1>
+      <p class="bio reveal d2">
+        Hello! I'm a Master's student in Computer Engineering at <a href="https://vt.edu/" target="_blank" rel="noopener">Virginia Tech</a>, where I work on <em>robot learning</em> and machine learning — with a particular interest in <em>retrieval systems</em> and <em>reinforcement learning reasoning</em>. I'm currently working with <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">Simon Stepputtis</a> at <strong>TEALab</strong>.
+      </p>
+      <p class="bio reveal d2">
+        Prior to my Master's, I was fortunate to do research across three labs that shaped how I think about <em>perception</em>, <em>retrieval</em>, and <em>3D scene understanding</em>.
+      </p>
+      <p class="bio reveal d2">
+        At <strong>NCCU Taiwan</strong>, I worked with <a href="https://sites.google.com/site/chihyichiu/" target="_blank" rel="noopener">Prof. Chih-Yi Chiu</a> on <em>token quantization for late-interaction retrieval</em> and on multimodal recommendation systems. The retrieval line of work paired ViT image encoders with BERT text features over a FAISS index, with explicit diversity and fairness constraints in the re-ranking stage.
+      </p>
+      <p class="bio reveal d2">
+        At <strong>IISc</strong>, I worked with <strong>Prof. Suresh Sundaram</strong> on transformer-based object detection. The main project was <em>Hi-DETR</em> — a hierarchical dense supervision detector built on a hybrid encoder with multi-scale deformable attention and task-aligned cross-attention, designed for small-object recall in cluttered AGV scenes (improving over RT-DETRv3 and SODETR). Beyond the detector, I built end-to-end perception stacks for autonomous ground vehicles, fusing LiDAR, radar, and camera streams and deploying them on embedded hardware via ROS.
+      </p>
+      <p class="bio reveal d2">
+        At <strong>CMU</strong>, I worked with <strong>Prof. Min Xu</strong> on <em>3D segmentation</em> — volumetric scene understanding and dense structure prediction from 3D inputs, with a focus on building models that remain robust under occlusion and scale variation.
       </p>
       <p class="hero-links reveal d3">
-        <a href="mailto:rohitsalla@vt.edu">Email</a>
+        <a href="mailto:sallarohit1011@gmail.com">Email</a>
         <a href="data/CV_Rohit_Salla.pdf">CV</a>
-        <a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=nn-Tz_IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/rohit-salla-380174170" target="_blank" rel="noopener">LinkedIn</a>
       </p>
     </div>
-    <div class="monogram reveal d2" aria-hidden="true">
-      <span class="corner-mark left">RKS</span>
-      <span class="corner-mark right">2026</span>
-      <div class="mono-mark">R<span>S</span></div>
-      <div class="mono-meta">— Blacksburg, VA —</div>
+
+    <div class="reveal d2">
+      <div class="photo-frame">
+        <img src="profile.jpg" alt="Rohit Salla" />
+      </div>
+      <div class="photo-meta">
+        <span>Rohit Salla</span>
+        <span>Anno 2026</span>
+      </div>
     </div>
   </header>
 
+  <!-- RESEARCH INTERESTS -->
+  <section id="interests">
+    <div class="section-meta">§ I — Research Interests</div>
+    <h2 class="section-title">Robot Learning <span class="italic">&amp;</span> Reasoning</h2>
+    <div class="section-rule"></div>
+
+    <div class="interests">
+      <p>
+        I'm broadly interested in building <strong>robot agents that can both learn and reason</strong>. The questions that draw me in: <em>when should a policy think harder before it acts?</em> How do we let agents transfer skills across tasks rather than re-learning from scratch? Can large language models serve as planners or reasoning modules for embodied control?
+      </p>
+      <p>
+        Concretely, my work spans <strong>diffusion policies for continuous control</strong>, <em>prefix-optimal stopping</em> in policy rollouts, exploration in linear RL, and the practical question of how to make policies adaptive in their compute usage. On the perception and language side, I work on <strong>retrieval-augmented systems</strong> — late-interaction retrieval, neuro-symbolic indexing for evolving corpora, and quantifying contradictions in multi-query LLM reasoning. The thread that ties it all together is <em>knowing when a model has done enough</em>.
+      </p>
+      <div class="keyword-row">
+        <span>Robot Learning</span>
+        <span>Reinforcement Learning</span>
+        <span>Diffusion Policies</span>
+        <span>Retrieval Systems</span>
+        <span>LLM Reasoning</span>
+        <span>Computer Vision</span>
+        <span>Neuro-Symbolic ML</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFILIATIONS -->
+  <section id="affiliations">
+    <div class="section-meta">§ II — Collaborations</div>
+    <h2 class="section-title">Places <span class="italic">&amp;</span> People</h2>
+    <div class="section-rule"></div>
+
+    <div class="affil-grid">
+      <a class="affil" href="https://vt.edu/" target="_blank" rel="noopener">
+        <div>
+          <div class="seal">VT</div>
+          <div class="name">Virginia <em>Tech</em></div>
+        </div>
+        <div class="role">2025 — Present<br/>MS · TEALab</div>
+      </a>
+
+      <a class="affil" href="https://simonstepputtis.com/" target="_blank" rel="noopener">
+        <div>
+          <div class="seal">TEA</div>
+          <div class="name">TEA<em>Lab</em></div>
+        </div>
+        <div class="role">w/ S. Stepputtis<br/>Robot Learning</div>
+      </a>
+
+      <a class="affil" href="https://www.cmu.edu/" target="_blank" rel="noopener">
+        <div>
+          <div class="seal">CMU</div>
+          <div class="name">Carnegie <em>Mellon</em></div>
+        </div>
+        <div class="role">w/ Prof. Min Xu<br/>3D Segmentation</div>
+      </a>
+
+      <a class="affil" href="https://iisc.ac.in/" target="_blank" rel="noopener">
+        <div>
+          <div class="seal">IISc</div>
+          <div class="name"><em>IISc</em> Bangalore</div>
+        </div>
+        <div class="role">w/ S. Sundaram<br/>Detection · CV</div>
+      </a>
+
+      <a class="affil" href="https://sites.google.com/site/chihyichiu/" target="_blank" rel="noopener">
+        <div>
+          <div class="seal">CCU</div>
+          <div class="name">NCCU <em>Taiwan</em></div>
+        </div>
+        <div class="role">w/ C.-Y. Chiu<br/>Quantization</div>
+      </a>
+    </div>
+  </section>
+
   <!-- PUBLICATIONS -->
-  <section id="research">
-    <div class="section-meta">§ I — Selected Publications</div>
+  <section id="publications">
+    <div class="section-meta">§ III — Selected Publications</div>
     <h2 class="section-title">Research <span class="italic">&amp;</span> Publications</h2>
     <div class="section-rule"></div>
 
@@ -492,7 +621,128 @@
       <div class="year-mark">— 2026 · Conference Papers</div>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">01</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="aurA" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#7a1f17" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#7a1f17" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="aurB" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#1c1814" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#1c1814" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="aurC" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#b54a1a" stop-opacity="0.26"/>
+                <stop offset="100%" stop-color="#b54a1a" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <text x="6" y="10" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">NEURO-SYMBOLIC</text>
+            <text x="114" y="10" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">EVOLVING RAG</text>
+
+            <rect x="6" y="14" width="108" height="86" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+
+            <g stroke="#e6e0d2" stroke-width="0.3">
+              <line x1="6" y1="38" x2="114" y2="38"/>
+              <line x1="6" y1="62" x2="114" y2="62"/>
+              <line x1="6" y1="86" x2="114" y2="86"/>
+              <line x1="42" y1="14" x2="42" y2="100"/>
+              <line x1="78" y1="14" x2="78" y2="100"/>
+            </g>
+
+            <ellipse cx="26" cy="36" rx="18" ry="13" fill="url(#aurA)"/>
+            <ellipse cx="94" cy="36" rx="18" ry="13" fill="url(#aurB)"/>
+            <ellipse cx="60" cy="80" rx="28" ry="14" fill="url(#aurC)"/>
+
+            <g stroke="#1c1814" stroke-width="0.5" opacity="0.55">
+              <line x1="34" y1="32" x2="86" y2="30"/>
+              <line x1="22" y1="40" x2="50" y2="76"/>
+              <line x1="100" y1="38" x2="72" y2="80"/>
+              <line x1="30" y1="42" x2="68" y2="78"/>
+              <line x1="98" y1="32" x2="56" y2="74"/>
+            </g>
+
+            <g fill="#7a1f17">
+              <circle cx="20" cy="32" r="1.7"/>
+              <circle cx="28" cy="28" r="1.7"/>
+              <circle cx="34" cy="32" r="1.7"/>
+              <circle cx="22" cy="40" r="1.7"/>
+              <circle cx="30" cy="42" r="1.7"/>
+            </g>
+            <g fill="#1c1814">
+              <circle cx="86" cy="30" r="1.7"/>
+              <circle cx="94" cy="28" r="1.7"/>
+              <circle cx="100" cy="32" r="1.7"/>
+              <circle cx="98" cy="40" r="1.7"/>
+              <circle cx="88" cy="42" r="1.7"/>
+            </g>
+            <g fill="#b54a1a">
+              <circle cx="50" cy="76" r="1.7"/>
+              <circle cx="56" cy="74" r="1.7"/>
+              <circle cx="62" cy="78" r="1.7"/>
+              <circle cx="68" cy="78" r="1.7"/>
+              <circle cx="72" cy="80" r="1.7"/>
+              <circle cx="60" cy="84" r="1.7"/>
+            </g>
+
+            <text x="14" y="22" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">papers</text>
+            <text x="106" y="22" text-anchor="end" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">articles</text>
+            <text x="60" y="92" text-anchor="middle" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">web</text>
+
+            <circle cx="60" cy="55" r="3.8" fill="#1c1814"/>
+            <text x="60" y="57.6" text-anchor="middle" font-size="5" fill="#fafaf7" font-family="monospace" font-weight="bold">Q</text>
+            <circle cx="60" cy="55" r="3.8" fill="none" stroke="#1c1814" stroke-width="0.6">
+              <animate attributeName="r" values="3.8;15" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+
+            <g stroke="#7a1f17" stroke-width="0.8" stroke-dasharray="2 1.5">
+              <line x1="60" y1="55" x2="34" y2="32" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.2;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </line>
+              <line x1="60" y1="55" x2="86" y2="30" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.23;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </line>
+              <line x1="60" y1="55" x2="62" y2="78" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.26;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </line>
+            </g>
+
+            <g fill="none" stroke="#7a1f17" stroke-width="1">
+              <circle cx="34" cy="32" r="3.8" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.2;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="86" cy="30" r="3.8" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.23;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="62" cy="78" r="3.8" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.26;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+
+            <circle cx="38" cy="50" r="0" fill="#b54a1a">
+              <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.6;0.65;0.7;0.95;1" dur="5s" repeatCount="indefinite"/>
+              <animate attributeName="r" values="0;0;4;1.8;1.8;0" keyTimes="0;0.6;0.68;0.75;0.95;1" dur="5s" repeatCount="indefinite"/>
+            </circle>
+
+            <line x1="38" y1="50" x2="56" y2="74" stroke="#b54a1a" stroke-width="0.7" opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.78;0.83;0.93;0.97;1" dur="5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="38" y1="50" x2="86" y2="30" stroke="#b54a1a" stroke-width="0.7" opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.81;0.86;0.93;0.97;1" dur="5s" repeatCount="indefinite"/>
+            </line>
+
+            <g opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.7;0.75;0.92;0.96;1" dur="5s" repeatCount="indefinite"/>
+              <rect x="44" y="46" width="18" height="7" fill="#b54a1a" rx="1"/>
+              <text x="53" y="51.5" text-anchor="middle" font-size="3.8" fill="#fafaf7" font-family="monospace" font-weight="bold" letter-spacing="0.4">+ NEW</text>
+            </g>
+
+            <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">CONTINUAL · t → ∞</text>
+          </svg>
+          <div class="thumb-cap">Paper 01</div>
+        </div>
         <div>
           <h3 class="pub-title"><span class="accent-word">AURORA:</span> Neuro-Symbolic Continual Indexing for Evolving RAG Systems</h3>
           <div class="pub-meta">
@@ -503,7 +753,80 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">02</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="14" font-size="5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">Q × D</text>
+            <text x="114" y="14" font-size="5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">fp32</text>
+            <g fill="#1c1814">
+              <rect x="6" y="22" width="8" height="8"/>
+              <rect x="6" y="32" width="8" height="8"/>
+              <rect x="6" y="42" width="8" height="8"/>
+              <rect x="6" y="52" width="8" height="8"/>
+            </g>
+            <g fill="#1c1814">
+              <rect x="22" y="6" width="8" height="8"/>
+              <rect x="34" y="6" width="8" height="8"/>
+              <rect x="46" y="6" width="8" height="8"/>
+              <rect x="58" y="6" width="8" height="8"/>
+              <rect x="70" y="6" width="8" height="8"/>
+              <rect x="82" y="6" width="8" height="8"/>
+              <rect x="94" y="6" width="8" height="8"/>
+            </g>
+            <g>
+              <rect x="22" y="22" width="8" height="8" fill="#7a1f17" opacity="0.85"/>
+              <rect x="34" y="22" width="8" height="8" fill="#7a1f17" opacity="0.30"/>
+              <rect x="46" y="22" width="8" height="8" fill="#7a1f17" opacity="0.55"/>
+              <rect x="58" y="22" width="8" height="8" fill="#7a1f17" opacity="0.20"/>
+              <rect x="70" y="22" width="8" height="8" fill="#7a1f17" opacity="0.70"/>
+              <rect x="82" y="22" width="8" height="8" fill="#7a1f17" opacity="0.40"/>
+              <rect x="94" y="22" width="8" height="8" fill="#7a1f17" opacity="0.60"/>
+
+              <rect x="22" y="32" width="8" height="8" fill="#7a1f17" opacity="0.40"/>
+              <rect x="34" y="32" width="8" height="8" fill="#7a1f17" opacity="0.90"/>
+              <rect x="46" y="32" width="8" height="8" fill="#7a1f17" opacity="0.25"/>
+              <rect x="58" y="32" width="8" height="8" fill="#7a1f17" opacity="0.65"/>
+              <rect x="70" y="32" width="8" height="8" fill="#7a1f17" opacity="0.35"/>
+              <rect x="82" y="32" width="8" height="8" fill="#7a1f17" opacity="0.50"/>
+              <rect x="94" y="32" width="8" height="8" fill="#7a1f17" opacity="0.30"/>
+
+              <rect x="22" y="42" width="8" height="8" fill="#7a1f17" opacity="0.50"/>
+              <rect x="34" y="42" width="8" height="8" fill="#7a1f17" opacity="0.35"/>
+              <rect x="46" y="42" width="8" height="8" fill="#7a1f17" opacity="0.80"/>
+              <rect x="58" y="42" width="8" height="8" fill="#7a1f17" opacity="0.45"/>
+              <rect x="70" y="42" width="8" height="8" fill="#7a1f17" opacity="0.25"/>
+              <rect x="82" y="42" width="8" height="8" fill="#7a1f17" opacity="0.70"/>
+              <rect x="94" y="42" width="8" height="8" fill="#7a1f17" opacity="0.55"/>
+
+              <rect x="22" y="52" width="8" height="8" fill="#7a1f17" opacity="0.60"/>
+              <rect x="34" y="52" width="8" height="8" fill="#7a1f17" opacity="0.20"/>
+              <rect x="46" y="52" width="8" height="8" fill="#7a1f17" opacity="0.55"/>
+              <rect x="58" y="52" width="8" height="8" fill="#7a1f17" opacity="0.85"/>
+              <rect x="70" y="52" width="8" height="8" fill="#7a1f17" opacity="0.50"/>
+              <rect x="82" y="52" width="8" height="8" fill="#7a1f17" opacity="0.30"/>
+              <rect x="94" y="52" width="8" height="8" fill="#7a1f17" opacity="0.40"/>
+            </g>
+            <rect x="20" y="20" width="12" height="44" fill="none" stroke="#b54a1a" stroke-width="1.4">
+              <animate attributeName="x" values="20;94;20" keyTimes="0;0.5;1" dur="3.5s" repeatCount="indefinite"/>
+            </rect>
+            <line x1="60" y1="68" x2="60" y2="78" stroke="#7a1f17" stroke-width="0.8" stroke-dasharray="2 1.5"/>
+            <polygon points="60,80 56.5,75 63.5,75" fill="#7a1f17"/>
+            <text x="60" y="88" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">QUANTIZE</text>
+            <g font-family="monospace" font-size="6" fill="#1c1814" letter-spacing="0.4">
+              <text x="22" y="100">0xA</text>
+              <text x="44" y="100">0xC</text>
+              <text x="66" y="100">0x7</text>
+              <text x="88" y="100">0xF</text>
+            </g>
+            <g fill="#7a1f17">
+              <rect x="22" y="105" width="14" height="3"/>
+              <rect x="44" y="105" width="14" height="3"/>
+              <rect x="66" y="105" width="14" height="3"/>
+              <rect x="88" y="105" width="14" height="3"/>
+            </g>
+            <text x="114" y="116" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">int4</text>
+          </svg>
+          <div class="thumb-cap">Paper 02</div>
+        </div>
         <div>
           <h3 class="pub-title"><span class="accent-word">CrossQ:</span> Task-Aligned Cross-Token Conditional Quantization for Late Interaction Retrieval</h3>
           <div class="pub-meta">
@@ -514,7 +837,54 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">03</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="12" font-size="5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">π(a|s, t)</text>
+            <text x="114" y="12" font-size="5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">t = T → 0</text>
+            <g stroke="#1c1814" stroke-width="0.5" fill="none" opacity="0.7">
+              <rect x="6" y="18" width="18" height="22"/>
+              <rect x="26" y="18" width="18" height="22"/>
+              <rect x="46" y="18" width="18" height="22"/>
+              <rect x="66" y="18" width="18" height="22"/>
+              <rect x="86" y="18" width="18" height="22"/>
+            </g>
+            <g fill="#1c1814">
+              <circle cx="9" cy="22" r="0.7"/><circle cx="14" cy="26" r="0.7"/><circle cx="11" cy="30" r="0.7"/><circle cx="18" cy="32" r="0.7"/><circle cx="13" cy="36" r="0.7"/><circle cx="20" cy="24" r="0.7"/><circle cx="16" cy="38" r="0.7"/>
+              <circle cx="30" cy="24" r="0.7"/><circle cx="36" cy="28" r="0.7"/><circle cx="33" cy="33" r="0.7"/><circle cx="40" cy="34" r="0.7"/><circle cx="37" cy="38" r="0.7"/>
+              <circle cx="51" cy="26" r="0.8"/><circle cx="56" cy="29" r="0.8"/><circle cx="53" cy="34" r="0.8"/><circle cx="59" cy="34" r="0.8"/>
+            </g>
+            <rect x="69" y="22" width="12" height="14" fill="#7a1f17" rx="1"/>
+            <rect x="89" y="22" width="12" height="14" fill="#7a1f17" rx="1" opacity="0.55"/>
+            <g>
+              <line x1="75" y1="44" x2="75" y2="51" stroke="#7a1f17" stroke-width="1.5"/>
+              <polygon points="71,49 79,49 75,55" fill="#7a1f17"/>
+              <text x="75" y="62" text-anchor="middle" font-size="5" fill="#7a1f17" font-family="monospace" letter-spacing="0.6" font-weight="bold">STOP</text>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.5" fill="none">
+              <line x1="10" y1="108" x2="112" y2="108"/>
+              <line x1="10" y1="72" x2="10" y2="108"/>
+            </g>
+            <text x="6" y="78" font-size="4.5" fill="#7a6f5e" font-family="monospace">V</text>
+            <text x="112" y="116" font-size="4.5" fill="#7a6f5e" font-family="monospace" text-anchor="end">steps</text>
+            <g stroke="#e6e0d2" stroke-width="0.3">
+              <line x1="10" y1="84" x2="112" y2="84"/>
+              <line x1="10" y1="96" x2="112" y2="96"/>
+            </g>
+            <path id="dpath" d="M 10 102 Q 30 92 50 84 Q 65 80 75 82 Q 90 90 112 102" fill="none" stroke="#7a1f17" stroke-width="1.4"/>
+            <circle cx="75" cy="82" r="3" fill="#7a1f17"/>
+            <circle cx="75" cy="82" r="3" fill="none" stroke="#7a1f17" stroke-width="0.6">
+              <animate attributeName="r" values="3;9" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="75" y="76" text-anchor="middle" font-size="4" fill="#7a1f17" font-family="monospace" font-weight="bold">t*</text>
+            <circle r="2" fill="#b54a1a">
+              <animateMotion dur="3.5s" repeatCount="indefinite">
+                <mpath href="#dpath"/>
+              </animateMotion>
+            </circle>
+          </svg>
+          <div class="thumb-cap">Paper 03</div>
+        </div>
         <div>
           <h3 class="pub-title">Learning When to Stop: <span class="accent-word">Prefix-Optimal Dynamic Diffusion Policies</span> for Continuous Control</h3>
           <div class="pub-meta">
@@ -525,7 +895,62 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">04</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="rew" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#7a1f17" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#7a1f17" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="dec" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#7a6f5e" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#7a6f5e" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <g stroke="#e6e0d2" stroke-width="0.4">
+              <line x1="0" y1="30" x2="120" y2="30"/>
+              <line x1="0" y1="60" x2="120" y2="60"/>
+              <line x1="0" y1="90" x2="120" y2="90"/>
+              <line x1="30" y1="0" x2="30" y2="120"/>
+              <line x1="60" y1="0" x2="60" y2="120"/>
+              <line x1="90" y1="0" x2="90" y2="120"/>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.5" fill="none">
+              <line x1="6" y1="110" x2="20" y2="110"/>
+              <line x1="6" y1="110" x2="6" y2="96"/>
+            </g>
+            <text x="22" y="113" font-size="4.5" fill="#7a6f5e" font-family="monospace">φ₁</text>
+            <text x="2" y="93" font-size="4.5" fill="#7a6f5e" font-family="monospace">φ₂</text>
+            <ellipse cx="42" cy="32" rx="18" ry="12" fill="url(#dec)"/>
+            <ellipse cx="60" cy="92" rx="16" ry="11" fill="url(#dec)"/>
+            <ellipse cx="42" cy="32" rx="8" ry="5" fill="none" stroke="#7a6f5e" stroke-width="0.3" stroke-dasharray="1.5 1"/>
+            <ellipse cx="60" cy="92" rx="7" ry="4" fill="none" stroke="#7a6f5e" stroke-width="0.3" stroke-dasharray="1.5 1"/>
+            <text x="42" y="20" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">DECOY</text>
+            <text x="60" y="108" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">DECOY</text>
+            <ellipse cx="96" cy="60" rx="22" ry="20" fill="url(#rew)"/>
+            <ellipse cx="96" cy="60" rx="14" ry="13" fill="none" stroke="#7a1f17" stroke-width="0.5" opacity="0.5"/>
+            <ellipse cx="96" cy="60" rx="8" ry="7" fill="none" stroke="#7a1f17" stroke-width="0.5" opacity="0.7"/>
+            <text x="96" y="40" text-anchor="middle" font-size="6" fill="#7a1f17" font-family="monospace" font-weight="bold">V*</text>
+            <circle cx="14" cy="60" r="3" fill="#1c1814"/>
+            <text x="14" y="74" text-anchor="middle" font-size="4.5" font-family="monospace" fill="#7a6f5e">s₀</text>
+            <path id="lsvipath" d="M 14 60 Q 30 60 48 56 Q 64 50 78 56 Q 88 60 96 60" fill="none" stroke="#7a1f17" stroke-width="1.4" stroke-dasharray="3 1.8"/>
+            <circle cx="96" cy="60" r="3" fill="#7a1f17"/>
+            <g>
+              <circle r="3" fill="#b54a1a">
+                <animateMotion dur="3.5s" repeatCount="indefinite">
+                  <mpath href="#lsvipath"/>
+                </animateMotion>
+              </circle>
+              <circle r="6" fill="none" stroke="#b54a1a" stroke-width="0.6" opacity="0.5">
+                <animateMotion dur="3.5s" repeatCount="indefinite">
+                  <mpath href="#lsvipath"/>
+                </animateMotion>
+              </circle>
+            </g>
+            <text x="60" y="118" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">GREEDY LSVI</text>
+          </svg>
+          <div class="thumb-cap">Paper 04</div>
+        </div>
         <div>
           <h3 class="pub-title">When Can Pure Exploitation Succeed in Linear RL? <span class="accent-word">Decoys and Self-Identifiability</span> for Greedy LSVI</h3>
           <div class="pub-meta">
@@ -540,7 +965,55 @@
       <div class="year-mark">— 2025 · Conference Papers</div>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">05</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="9" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">FIG.1</text>
+            <g stroke="#1c1814" stroke-width="0.7" fill="none">
+              <rect x="6" y="12" width="36" height="26"/>
+              <circle cx="16" cy="24" r="3.5"/>
+              <circle cx="16" cy="24" r="1.6"/>
+              <line x1="22" y1="20" x2="36" y2="20"/>
+              <line x1="22" y1="24" x2="38" y2="24"/>
+              <line x1="22" y1="28" x2="34" y2="28"/>
+              <line x1="16" y1="28" x2="16" y2="34"/>
+              <line x1="16" y1="34" x2="24" y2="34"/>
+            </g>
+            <text x="100" y="9" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">ABSTRACT</text>
+            <g stroke="#1c1814" stroke-width="0.6" fill="none">
+              <rect x="78" y="12" width="36" height="26"/>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.5" opacity="0.85">
+              <line x1="82" y1="18" x2="110" y2="18"/>
+              <line x1="82" y1="22" x2="108" y2="22"/>
+              <line x1="82" y1="26" x2="110" y2="26"/>
+              <line x1="82" y1="30" x2="106" y2="30"/>
+              <line x1="82" y1="34" x2="110" y2="34"/>
+            </g>
+            <line x1="24" y1="40" x2="24" y2="54" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 1.5"/>
+            <polygon points="24,56 21,52 27,52" fill="#1c1814"/>
+            <text x="24" y="49" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" font-weight="bold">ViT</text>
+            <line x1="96" y1="40" x2="96" y2="54" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 1.5"/>
+            <polygon points="96,56 93,52 99,52" fill="#1c1814"/>
+            <text x="96" y="49" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" font-weight="bold">BERT</text>
+            <ellipse cx="60" cy="80" rx="50" ry="18" fill="none" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 2"/>
+            <text x="60" y="105" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">SHARED EMBEDDING</text>
+            <circle cx="24" cy="80" r="3.2" fill="#7a1f17">
+              <animate attributeName="cx" values="24;55;55;24;24" keyTimes="0;0.4;0.7;0.95;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="96" cy="80" r="3.2" fill="#b54a1a">
+              <animate attributeName="cx" values="96;65;65;96;96" keyTimes="0;0.4;0.7;0.95;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="55" y1="80" x2="65" y2="80" stroke="#7a1f17" stroke-width="1.4" opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.7;0.75" dur="4s" repeatCount="indefinite"/>
+            </line>
+            <text x="60" y="76" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" font-weight="bold" opacity="0">
+              sim 0.87
+              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.7;0.75" dur="4s" repeatCount="indefinite"/>
+            </text>
+            <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" font-weight="bold" letter-spacing="0.5">↑ MATCH</text>
+          </svg>
+          <div class="thumb-cap">Paper 05</div>
+        </div>
         <div>
           <h3 class="pub-title">Multimodal Patent Retrieval: <span class="accent-word">Integrating Text and Images</span> with Long-Tail Optimization Techniques</h3>
           <div class="pub-meta">
@@ -555,7 +1028,66 @@
       <div class="year-mark">— Workshop Papers</div>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">06</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <rect x="44" y="6" width="32" height="14" fill="#1c1814" rx="1"/>
+              <text x="60" y="16" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold" letter-spacing="0.4">PROMPT</text>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.6" fill="none">
+              <line x1="55" y1="20" x2="20" y2="38"/>
+              <line x1="60" y1="20" x2="60" y2="38"/>
+              <line x1="65" y1="20" x2="100" y2="38"/>
+            </g>
+            <g>
+              <rect x="6" y="38" width="28" height="12" fill="none" stroke="#1c1814" stroke-width="0.6" rx="1"/>
+              <text x="20" y="46.5" text-anchor="middle" font-size="5.5" fill="#1c1814" font-family="monospace">Q₁</text>
+              <rect x="46" y="38" width="28" height="12" fill="none" stroke="#1c1814" stroke-width="0.6" rx="1"/>
+              <text x="60" y="46.5" text-anchor="middle" font-size="5.5" fill="#1c1814" font-family="monospace">Q₂</text>
+              <rect x="86" y="38" width="28" height="12" fill="none" stroke="#1c1814" stroke-width="0.6" rx="1"/>
+              <text x="100" y="46.5" text-anchor="middle" font-size="5.5" fill="#1c1814" font-family="monospace">Q₃</text>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.5" fill="none" stroke-dasharray="1.5 1.5">
+              <line x1="20" y1="50" x2="20" y2="62"/>
+              <line x1="60" y1="50" x2="60" y2="62"/>
+              <line x1="100" y1="50" x2="100" y2="62"/>
+            </g>
+            <g>
+              <rect x="10" y="62" width="20" height="14" fill="#7a1f17" rx="1"/>
+              <text x="20" y="72" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold">YES</text>
+              <rect x="50" y="62" width="20" height="14" fill="#1c1814" rx="1"/>
+              <text x="60" y="72" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold">NO</text>
+              <rect x="90" y="62" width="20" height="14" fill="#7a1f17" rx="1"/>
+              <text x="100" y="72" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold">YES</text>
+            </g>
+            <text x="6" y="86" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">CONTRADICTION MATRIX</text>
+            <g>
+              <rect x="36" y="90" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="46" y="90" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="56" y="90" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="36" y="100" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="46" y="100" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="56" y="100" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="36" y="110" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="46" y="110" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="56" y="110" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
+            </g>
+            <g font-family="monospace" font-size="4.5" fill="#7a6f5e">
+              <text x="34" y="96" text-anchor="end">Q₁</text>
+              <text x="34" y="106" text-anchor="end">Q₂</text>
+              <text x="34" y="116" text-anchor="end">Q₃</text>
+            </g>
+            <g>
+              <rect x="74" y="96" width="40" height="16" fill="none" stroke="#7a1f17" stroke-width="0.7" rx="1"/>
+              <text x="94" y="103" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" letter-spacing="0.3">CONTRADICT</text>
+              <text x="94" y="110" text-anchor="middle" font-size="6" fill="#7a1f17" font-family="monospace" font-weight="bold">66%</text>
+            </g>
+            <line x1="65" y1="100" x2="73" y2="100" stroke="#7a1f17" stroke-width="0.8">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+          </svg>
+          <div class="thumb-cap">Paper 06</div>
+        </div>
         <div>
           <h3 class="pub-title">Quantifying <span class="accent-word">Cross-Query Contradictions</span> in Multi-Query LLM Reasoning</h3>
           <div class="pub-meta">
@@ -567,7 +1099,97 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">07</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">SCALE</text>
+            <text x="114" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">VLM PROBE</text>
+            <rect x="8" y="16" width="34" height="34" fill="none" stroke="#1c1814" stroke-width="0.6"/>
+            <g fill="#7a1f17">
+              <rect x="10" y="18" width="6" height="6" opacity="0.3"/>
+              <rect x="16" y="18" width="6" height="6" opacity="0.7"/>
+              <rect x="22" y="18" width="6" height="6" opacity="0.4"/>
+              <rect x="28" y="18" width="6" height="6" opacity="0.5"/>
+              <rect x="34" y="18" width="6" height="6" opacity="0.2"/>
+              <rect x="10" y="24" width="6" height="6" opacity="0.5"/>
+              <rect x="16" y="24" width="6" height="6" opacity="0.85"/>
+              <rect x="22" y="24" width="6" height="6" opacity="0.9"/>
+              <rect x="28" y="24" width="6" height="6" opacity="0.6"/>
+              <rect x="34" y="24" width="6" height="6" opacity="0.3"/>
+              <rect x="10" y="30" width="6" height="6" opacity="0.4"/>
+              <rect x="16" y="30" width="6" height="6" opacity="0.7"/>
+              <rect x="22" y="30" width="6" height="6" opacity="0.5"/>
+              <rect x="28" y="30" width="6" height="6" opacity="0.4"/>
+              <rect x="34" y="30" width="6" height="6" opacity="0.25"/>
+              <rect x="10" y="36" width="6" height="6" opacity="0.3"/>
+              <rect x="16" y="36" width="6" height="6" opacity="0.4"/>
+              <rect x="22" y="36" width="6" height="6" opacity="0.5"/>
+              <rect x="28" y="36" width="6" height="6" opacity="0.35"/>
+              <rect x="34" y="36" width="6" height="6" opacity="0.2"/>
+              <rect x="10" y="42" width="6" height="6" opacity="0.2"/>
+              <rect x="16" y="42" width="6" height="6" opacity="0.3"/>
+              <rect x="22" y="42" width="6" height="6" opacity="0.35"/>
+              <rect x="28" y="42" width="6" height="6" opacity="0.25"/>
+              <rect x="34" y="42" width="6" height="6" opacity="0.2"/>
+            </g>
+            <text x="25" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₁ 14×14</text>
+            <rect x="50" y="20" width="26" height="26" fill="none" stroke="#1c1814" stroke-width="0.6"/>
+            <g fill="#7a1f17">
+              <rect x="52" y="22" width="6" height="6" opacity="0.5"/>
+              <rect x="58" y="22" width="6" height="6" opacity="0.85"/>
+              <rect x="64" y="22" width="6" height="6" opacity="0.7"/>
+              <rect x="70" y="22" width="6" height="6" opacity="0.3"/>
+              <rect x="52" y="28" width="6" height="6" opacity="0.7"/>
+              <rect x="58" y="28" width="6" height="6" opacity="0.95"/>
+              <rect x="64" y="28" width="6" height="6" opacity="0.8"/>
+              <rect x="70" y="28" width="6" height="6" opacity="0.4"/>
+              <rect x="52" y="34" width="6" height="6" opacity="0.4"/>
+              <rect x="58" y="34" width="6" height="6" opacity="0.6"/>
+              <rect x="64" y="34" width="6" height="6" opacity="0.5"/>
+              <rect x="70" y="34" width="6" height="6" opacity="0.35"/>
+              <rect x="52" y="40" width="6" height="6" opacity="0.3"/>
+              <rect x="58" y="40" width="6" height="6" opacity="0.4"/>
+              <rect x="64" y="40" width="6" height="6" opacity="0.45"/>
+              <rect x="70" y="40" width="6" height="6" opacity="0.3"/>
+            </g>
+            <text x="63" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₂ 28×28</text>
+            <rect x="86" y="22" width="22" height="22" fill="none" stroke="#1c1814" stroke-width="0.6"/>
+            <g fill="#7a1f17">
+              <rect x="88" y="24" width="6" height="6" opacity="0.85"/>
+              <rect x="94" y="24" width="6" height="6" opacity="0.95"/>
+              <rect x="100" y="24" width="6" height="6" opacity="0.6"/>
+              <rect x="88" y="30" width="6" height="6" opacity="0.95"/>
+              <rect x="94" y="30" width="6" height="6" opacity="0.5"/>
+              <rect x="100" y="30" width="6" height="6" opacity="0.4"/>
+              <rect x="88" y="36" width="6" height="6" opacity="0.4"/>
+              <rect x="94" y="36" width="6" height="6" opacity="0.5"/>
+              <rect x="100" y="36" width="6" height="6" opacity="0.6"/>
+            </g>
+            <text x="97" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₃ 56×56</text>
+            <g stroke="#7a6f5e" stroke-width="0.4" fill="none" opacity="0.5">
+              <line x1="42" y1="33" x2="50" y2="33"/>
+              <line x1="76" y1="33" x2="86" y2="33"/>
+              <polygon points="48,31 50,33 48,35" fill="#7a6f5e"/>
+              <polygon points="84,31 86,33 84,35" fill="#7a6f5e"/>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.5" fill="none">
+              <line x1="10" y1="98" x2="110" y2="98"/>
+              <line x1="10" y1="65" x2="10" y2="98"/>
+            </g>
+            <text x="6" y="71" font-size="4.5" fill="#7a6f5e" font-family="monospace">acc</text>
+            <text x="110" y="106" font-size="4.5" fill="#7a6f5e" font-family="monospace" text-anchor="end">scale →</text>
+            <g fill="#7a1f17">
+              <rect x="22" y="86" width="14" height="12"/>
+              <rect x="56" y="74" width="14" height="24"/>
+              <rect x="90" y="80" width="14" height="18"/>
+            </g>
+            <line x1="22" y1="68" x2="22" y2="72" stroke="#7a1f17" stroke-width="1">
+              <animate attributeName="x1" values="22;56;90;22" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="22;56;90;22" dur="3s" repeatCount="indefinite"/>
+            </line>
+            <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">DIAGNOSTIC PROBE</text>
+          </svg>
+          <div class="thumb-cap">Paper 07</div>
+        </div>
         <div>
           <h3 class="pub-title"><span class="accent-word">Multiscale Diagnostics</span> of Visual Language Models</h3>
           <div class="pub-meta">
@@ -579,7 +1201,64 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">08</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">CANDIDATE POOL</text>
+            <g>
+              <rect x="6" y="16" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="20" y="16" width="14" height="8" fill="#1c1814" opacity="0.18"/>
+              <text x="27" y="22" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.42</text>
+              <rect x="40" y="16" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="54" y="16" width="14" height="8" fill="#7a1f17" opacity="0.85"/>
+              <text x="61" y="22" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.91</text>
+
+              <rect x="6" y="28" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="20" y="28" width="14" height="8" fill="#7a1f17" opacity="0.7"/>
+              <text x="27" y="34" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.78</text>
+              <rect x="40" y="28" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="54" y="28" width="14" height="8" fill="#1c1814" opacity="0.22"/>
+              <text x="61" y="34" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.31</text>
+
+              <rect x="6" y="40" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="20" y="40" width="14" height="8" fill="#7a1f17" opacity="0.55"/>
+              <text x="27" y="46" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.66</text>
+              <rect x="40" y="40" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
+              <rect x="54" y="40" width="14" height="8" fill="#1c1814" opacity="0.15"/>
+              <text x="61" y="46" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.18</text>
+            </g>
+            <g stroke="#7a1f17" stroke-width="0.6" fill="none" stroke-dasharray="2 1.5" opacity="0.7">
+              <line x1="55" y1="20" x2="86" y2="68"/>
+              <line x1="27" y1="32" x2="86" y2="74"/>
+              <line x1="27" y1="44" x2="86" y2="80"/>
+            </g>
+            <g>
+              <rect x="76" y="16" width="38" height="68" fill="none" stroke="#1c1814" stroke-width="0.6"/>
+              <text x="95" y="14" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">TOP-K</text>
+              <rect x="80" y="22" width="30" height="8" fill="#7a1f17"/>
+              <text x="95" y="28" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">★ 0.91</text>
+              <rect x="80" y="34" width="30" height="8" fill="#7a1f17" opacity="0.9"/>
+              <text x="95" y="40" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">★ 0.78</text>
+              <rect x="80" y="46" width="30" height="8" fill="#7a1f17" opacity="0.75">
+                <animate attributeName="opacity" values="0;0.75;0.75;0;0" keyTimes="0;0.4;0.85;0.95;1" dur="3.5s" repeatCount="indefinite"/>
+              </rect>
+              <text x="95" y="52" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold" opacity="0">★ 0.66
+                <animate attributeName="opacity" values="0;0.95;0.95;0;0" keyTimes="0;0.4;0.85;0.95;1" dur="3.5s" repeatCount="indefinite"/>
+              </text>
+              <rect x="80" y="58" width="30" height="8" fill="none" stroke="#1c1814" stroke-width="0.4" stroke-dasharray="1.5 1.5"/>
+              <rect x="80" y="70" width="30" height="8" fill="none" stroke="#1c1814" stroke-width="0.4" stroke-dasharray="1.5 1.5"/>
+            </g>
+            <text x="6" y="92" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">BUDGET</text>
+            <rect x="6" y="96" width="108" height="8" fill="none" stroke="#1c1814" stroke-width="0.6"/>
+            <rect x="6" y="96" width="68" height="8" fill="#f7e89d">
+              <animate attributeName="width" values="0;68;68;68" keyTimes="0;0.6;0.95;1" dur="3.5s" repeatCount="indefinite"/>
+            </rect>
+            <line x1="74" y1="94" x2="74" y2="106" stroke="#7a1f17" stroke-width="1"/>
+            <text x="74" y="114" text-anchor="middle" font-size="4" fill="#7a1f17" font-family="monospace">B*</text>
+            <text x="6" y="118" font-size="4" fill="#7a6f5e" font-family="monospace">0</text>
+            <text x="114" y="118" font-size="4" fill="#7a6f5e" font-family="monospace" text-anchor="end">N</text>
+          </svg>
+          <div class="thumb-cap">Paper 08</div>
+        </div>
         <div>
           <h3 class="pub-title"><span class="accent-word">Curate, Don't Augment:</span> Budgeted Multimodal Intervention Design for Invariant Vision–Language Learning</h3>
           <div class="pub-meta">
@@ -591,7 +1270,56 @@
       </article>
 
       <article class="pub">
-        <div class="pub-marker"><span class="num">09</span></div>
+        <div class="pub-thumb">
+          <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="12" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">METRICS</text>
+            <text x="114" y="12" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">w · m</text>
+            <g>
+              <text x="6" y="26" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">FACT</text>
+              <rect x="32" y="22" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="32" y="22" width="42" height="6" fill="#7a1f17"/>
+              <text x="86" y="26" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.84</text>
+
+              <text x="6" y="36" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">CALIB</text>
+              <rect x="32" y="32" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="32" y="32" width="32" height="6" fill="#7a1f17"/>
+              <text x="86" y="36" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.64</text>
+
+              <text x="6" y="46" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">CONS</text>
+              <rect x="32" y="42" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="32" y="42" width="46" height="6" fill="#7a1f17"/>
+              <text x="86" y="46" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.92</text>
+
+              <text x="6" y="56" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">GRND</text>
+              <rect x="32" y="52" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
+              <rect x="32" y="52" width="38" height="6" fill="#7a1f17"/>
+              <text x="86" y="56" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.76</text>
+            </g>
+            <g stroke="#1c1814" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1.5" opacity="0.5">
+              <line x1="100" y1="25" x2="60" y2="80"/>
+              <line x1="100" y1="35" x2="60" y2="80"/>
+              <line x1="100" y1="45" x2="60" y2="80"/>
+              <line x1="100" y1="55" x2="60" y2="80"/>
+            </g>
+            <g>
+              <path d="M 30 88 A 30 30 0 0 1 90 88" fill="none" stroke="#1c1814" stroke-width="1"/>
+              <line x1="30" y1="88" x2="33" y2="84" stroke="#1c1814" stroke-width="0.5"/>
+              <line x1="60" y1="58" x2="60" y2="62" stroke="#1c1814" stroke-width="0.5"/>
+              <line x1="90" y1="88" x2="87" y2="84" stroke="#1c1814" stroke-width="0.5"/>
+              <text x="28" y="96" font-size="4" fill="#7a6f5e" font-family="monospace" text-anchor="end">0</text>
+              <text x="60" y="55" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">.5</text>
+              <text x="92" y="96" font-size="4" fill="#7a6f5e" font-family="monospace">1</text>
+              <line x1="60" y1="88" stroke="#7a1f17" stroke-width="2.4" stroke-linecap="round" x2="60" y2="64">
+                <animateTransform attributeName="transform" type="rotate" values="-72 60 88;48 60 88;-72 60 88" dur="3.5s" repeatCount="indefinite"/>
+              </line>
+              <circle cx="60" cy="88" r="2.5" fill="#1c1814"/>
+            </g>
+            <rect x="42" y="100" width="36" height="14" fill="none" stroke="#7a1f17" stroke-width="0.7" rx="1"/>
+            <text x="60" y="105" text-anchor="middle" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">RELIABILITY</text>
+            <text x="60" y="112" text-anchor="middle" font-size="6.5" fill="#7a1f17" font-family="monospace" font-weight="bold" letter-spacing="0.4">0.79</text>
+          </svg>
+          <div class="thumb-cap">Paper 09</div>
+        </div>
         <div>
           <h3 class="pub-title">Beyond Hallucinations: A <span class="accent-word">Composite Score</span> for Measuring Reliability in Open-Source LLMs</h3>
           <div class="pub-meta">
@@ -604,16 +1332,21 @@
     </div>
   </section>
 
+  <!-- COFFEE -->
+  <div class="coffee" id="contact">
+    <em>Always open to talk.</em> &nbsp;I'd love to chat about <strong>AI</strong> or to collaborate on projects — feel free to reach out for a virtual coffee chat. The fastest way is <a href="mailto:sallarohit1011@gmail.com">sallarohit1011@gmail.com</a>.
+  </div>
+
   <!-- FOOTER -->
-  <footer id="contact" class="colophon">
+  <footer class="colophon">
     <div class="set">
-      <a href="mailto:rohitsalla@vt.edu">rohitsalla@vt.edu</a>
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a>
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sallarohit1011@gmail.com">Email</a>
+      <a href="https://scholar.google.com/citations?user=nn-Tz_IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://github.com/rohitsalla" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/rohit-salla-380174170" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="imprint">
-      Set in Fraunces &amp; Newsreader. Last updated 2026.
+       © Rohit Salla 2026.
     </div>
   </footer>
 
@@ -629,7 +1362,7 @@
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.pub-group, .news, .colophon').forEach(el => {
+  document.querySelectorAll('.pub-group, .interests, .affil-grid, .coffee, .colophon').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(8px)';
     obs.observe(el);
