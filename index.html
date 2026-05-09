@@ -452,14 +452,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    min-height: 240px;
   }
-  .visitors-map a { border: none; display: block; line-height: 0; }
-  .visitors-map img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-  }
+  .visitors-map > * { width: 100%; }
 
   /* Coffee CTA */
   .coffee {
@@ -1308,24 +1303,13 @@
         </div>
 
         <p class="visitor-note">
-          Each marker on the map is a real visitor's approximate region — anonymous, just a pin on a country. Updated continuously.
+          Each marker on the map is a real visitor's approximate region — anonymous, just a pin on a country. Full stats at <a href="https://mapmyvisitors.com/web/1c4eh" target="_blank" rel="noopener">mapmyvisitors.com</a>.
         </p>
       </div>
 
       <div class="visitors-map">
-        <!--
-          ClustrMaps embed — shows a world map with dots for each visitor country.
-          To activate:
-            1. Sign up free at https://clustrmaps.com (takes 30 seconds)
-            2. Register your site URL — they will give you a tracker ID like "abc123XYZ"
-            3. Replace BOTH occurrences of YOUR_CLUSTRMAPS_ID below with that ID
-          Until you do that, the map will show their default placeholder image.
-        -->
-        <a href="https://clustrmaps.com/site/YOUR_CLUSTRMAPS_ID"
-           title="Visit tracker" target="_blank" rel="noopener">
-          <img src="//clustrmaps.com/map_v2.png?cl=1c1814&w=480&t=tt&d=YOUR_CLUSTRMAPS_ID&co=fafaf7&ct=7a6f5e&cmo=b54a1a&cmn=7a1f17"
-               alt="Map of visitor locations" />
-        </a>
+        <!-- mapmyvisitors.com tracker — stats dashboard at https://mapmyvisitors.com/web/1c4eh -->
+        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=tYKrTleIzEG_M6tzoWmIiZKf5IJJPr5G469r5BeC5O0&cl=ffffff&w=a"></script>
       </div>
     </div>
   </section>
