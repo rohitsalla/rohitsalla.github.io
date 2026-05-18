@@ -202,35 +202,6 @@
     margin-bottom: 14px;
   }
 
-  /* Research Interests prose */
-  .interests p {
-    font-family: 'Newsreader', serif;
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--ink-soft);
-    margin: 0 0 16px;
-  }
-  .interests p em { color: var(--accent); font-style: italic; }
-  .interests p strong { color: var(--ink); font-weight: 500; }
-
-  .keyword-row {
-    margin-top: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .keyword-row span {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mute);
-    border: 1px solid var(--rule);
-    background: rgba(250,246,236,0.6);
-    padding: 5px 10px;
-    border-radius: 2px;
-  }
-
   /* AFFILIATIONS */
   .affil-grid {
     display: grid;
@@ -420,21 +391,6 @@
     color: var(--mute);
     margin-bottom: 10px;
   }
-  .visitor-stat .stat-counter {
-    display: block;
-    height: 28px;
-    width: auto;
-  }
-  .visitor-stat .stat-big {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-variation-settings: "opsz" 144;
-    font-size: 56px;
-    line-height: 1;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-  }
-  .visitor-stat .stat-big .accent { color: var(--accent); font-style: italic; }
   .visitor-note {
     font-family: 'Newsreader', serif;
     font-style: italic;
@@ -454,10 +410,7 @@
     overflow: hidden;
     height: 200px;
   }
-  .visitors-map > * {
-    width: 100%;
-    max-height: 100%;
-  }
+  .visitors-map > * { width: 100%; max-height: 100%; }
   .visitors-map img,
   .visitors-map iframe,
   .visitors-map canvas {
@@ -566,19 +519,10 @@
     <div>
       <h1 class="name reveal d1">Rohit <span class="italic">Salla</span></h1>
       <p class="bio reveal d2">
-        Hello! I'm a Master's student in Computer Engineering at <a href="https://vt.edu/" target="_blank" rel="noopener">Virginia Tech</a>, where I work on <em>robot learning</em> and machine learning — with a particular interest in <em>retrieval systems</em> and <em>reinforcement learning reasoning</em>. I'm currently working with <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">Simon Stepputtis</a> at <strong>TEALab</strong>.
+        Hello! I am a Master's student in Computer Engineering at <a href="https://vt.edu/" target="_blank" rel="noopener">Virginia Tech</a>, where I work on reinforcement learning for language models and robot control at <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">TEALab</a> with <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">Simon Stepputtis</a>.
       </p>
       <p class="bio reveal d2">
-        Prior to my Master's, I was fortunate to do research across three labs that shaped how I think about <em>perception</em>, <em>retrieval</em>, and <em>3D scene understanding</em>.
-      </p>
-      <p class="bio reveal d2">
-        At <strong>NCCU Taiwan</strong>, I worked with <a href="https://sites.google.com/site/chihyichiu/" target="_blank" rel="noopener">Prof. Chih-Yi Chiu</a> on <em>token quantization for late-interaction retrieval</em> and on multimodal recommendation systems.
-      </p>
-      <p class="bio reveal d2">
-        At <strong>IISc</strong>, I worked with <strong>Prof. Suresh Sundaram</strong> on object detection transformers for small objects.
-      </p>
-      <p class="bio reveal d2">
-        At <strong>CMU</strong>, I worked with <strong>Prof. Min Xu</strong> on <em>3D segmentation</em> — volumetric scene understanding and dense structure prediction from 3D inputs, with a focus on building models that remain robust under occlusion and scale variation.
+        Before Virginia Tech, I worked across three labs during my undergrad. At <a href="https://sites.google.com/site/chihyichiu/" target="_blank" rel="noopener">NCCU Taiwan</a> with <a href="https://sites.google.com/site/chihyichiu/" target="_blank" rel="noopener">Prof. Chih-Yi Chiu</a> on token quantization for late-interaction retrieval. At <a href="https://iisc.ac.in/" target="_blank" rel="noopener">IISc Bangalore</a> with Prof. Suresh Sundaram on object detection transformers for small objects. At <a href="https://www.cmu.edu/" target="_blank" rel="noopener">CMU</a> with Prof. Min Xu on 3D segmentation and volumetric scene understanding.
       </p>
       <p class="hero-links reveal d3">
         <a href="mailto:sallarohit1011@gmail.com">Email</a>
@@ -600,34 +544,9 @@
     </div>
   </header>
 
-  <!-- RESEARCH INTERESTS -->
-  <section id="interests">
-    <div class="section-meta">§ I — Research Interests</div>
-    <h2 class="section-title">Robot Learning <span class="italic">&amp;</span> Reasoning</h2>
-    <div class="section-rule"></div>
-
-    <div class="interests">
-      <p>
-        I'm broadly interested in building <strong>robot agents that can both learn and reason</strong>. The questions that draw me in: <em>when should a policy think harder before it acts?</em> How do we let agents transfer skills across tasks rather than re-learning from scratch? Can large language models serve as planners or reasoning modules for embodied control?
-      </p>
-      <p>
-        Concretely, my work spans <strong>diffusion policies for continuous control</strong>, <em>prefix-optimal stopping</em> in policy rollouts, exploration in linear RL, and the practical question of how to make policies adaptive in their compute usage. On the perception and language side, I work on <strong>retrieval-augmented systems</strong> — late-interaction retrieval, neuro-symbolic indexing for evolving corpora, and quantifying contradictions in multi-query LLM reasoning. The thread that ties it all together is <em>knowing when a model has done enough</em>.
-      </p>
-      <div class="keyword-row">
-        <span>Robot Learning</span>
-        <span>Reinforcement Learning</span>
-        <span>Diffusion Policies</span>
-        <span>Retrieval Systems</span>
-        <span>LLM Reasoning</span>
-        <span>Computer Vision</span>
-        <span>Neuro-Symbolic ML</span>
-      </div>
-    </div>
-  </section>
-
   <!-- AFFILIATIONS -->
   <section id="affiliations">
-    <div class="section-meta">§ II — Collaborations</div>
+    <div class="section-meta">§ I — Collaborations</div>
     <h2 class="section-title">Places <span class="italic">&amp;</span> People</h2>
     <div class="section-rule"></div>
 
@@ -676,7 +595,7 @@
 
   <!-- PUBLICATIONS -->
   <section id="publications">
-    <div class="section-meta">§ III — Selected Publications</div>
+    <div class="section-meta">§ II — Selected Publications</div>
     <h2 class="section-title">Research <span class="italic">&amp;</span> Publications</h2>
     <div class="section-rule"></div>
 
@@ -721,73 +640,20 @@
               <line x1="98" y1="32" x2="56" y2="74"/>
             </g>
             <g fill="#7a1f17">
-              <circle cx="20" cy="32" r="1.7"/>
-              <circle cx="28" cy="28" r="1.7"/>
-              <circle cx="34" cy="32" r="1.7"/>
-              <circle cx="22" cy="40" r="1.7"/>
-              <circle cx="30" cy="42" r="1.7"/>
+              <circle cx="20" cy="32" r="1.7"/><circle cx="28" cy="28" r="1.7"/><circle cx="34" cy="32" r="1.7"/><circle cx="22" cy="40" r="1.7"/><circle cx="30" cy="42" r="1.7"/>
             </g>
             <g fill="#1c1814">
-              <circle cx="86" cy="30" r="1.7"/>
-              <circle cx="94" cy="28" r="1.7"/>
-              <circle cx="100" cy="32" r="1.7"/>
-              <circle cx="98" cy="40" r="1.7"/>
-              <circle cx="88" cy="42" r="1.7"/>
+              <circle cx="86" cy="30" r="1.7"/><circle cx="94" cy="28" r="1.7"/><circle cx="100" cy="32" r="1.7"/><circle cx="98" cy="40" r="1.7"/><circle cx="88" cy="42" r="1.7"/>
             </g>
             <g fill="#b54a1a">
-              <circle cx="50" cy="76" r="1.7"/>
-              <circle cx="56" cy="74" r="1.7"/>
-              <circle cx="62" cy="78" r="1.7"/>
-              <circle cx="68" cy="78" r="1.7"/>
-              <circle cx="72" cy="80" r="1.7"/>
-              <circle cx="60" cy="84" r="1.7"/>
+              <circle cx="50" cy="76" r="1.7"/><circle cx="56" cy="74" r="1.7"/><circle cx="62" cy="78" r="1.7"/><circle cx="68" cy="78" r="1.7"/><circle cx="72" cy="80" r="1.7"/><circle cx="60" cy="84" r="1.7"/>
             </g>
-            <text x="14" y="22" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">papers</text>
-            <text x="106" y="22" text-anchor="end" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">articles</text>
-            <text x="60" y="92" text-anchor="middle" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.3">web</text>
             <circle cx="60" cy="55" r="3.8" fill="#1c1814"/>
             <text x="60" y="57.6" text-anchor="middle" font-size="5" fill="#fafaf7" font-family="monospace" font-weight="bold">Q</text>
             <circle cx="60" cy="55" r="3.8" fill="none" stroke="#1c1814" stroke-width="0.6">
               <animate attributeName="r" values="3.8;15" dur="2s" repeatCount="indefinite"/>
               <animate attributeName="opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/>
             </circle>
-            <g stroke="#7a1f17" stroke-width="0.8" stroke-dasharray="2 1.5">
-              <line x1="60" y1="55" x2="34" y2="32" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.2;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </line>
-              <line x1="60" y1="55" x2="86" y2="30" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.23;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </line>
-              <line x1="60" y1="55" x2="62" y2="78" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.26;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </line>
-            </g>
-            <g fill="none" stroke="#7a1f17" stroke-width="1">
-              <circle cx="34" cy="32" r="3.8" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.2;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="86" cy="30" r="3.8" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.23;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="62" cy="78" r="3.8" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.26;0.45;0.5;1" dur="5s" repeatCount="indefinite"/>
-              </circle>
-            </g>
-            <circle cx="38" cy="50" r="0" fill="#b54a1a">
-              <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.6;0.65;0.7;0.95;1" dur="5s" repeatCount="indefinite"/>
-              <animate attributeName="r" values="0;0;4;1.8;1.8;0" keyTimes="0;0.6;0.68;0.75;0.95;1" dur="5s" repeatCount="indefinite"/>
-            </circle>
-            <line x1="38" y1="50" x2="56" y2="74" stroke="#b54a1a" stroke-width="0.7" opacity="0">
-              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.78;0.83;0.93;0.97;1" dur="5s" repeatCount="indefinite"/>
-            </line>
-            <line x1="38" y1="50" x2="86" y2="30" stroke="#b54a1a" stroke-width="0.7" opacity="0">
-              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.81;0.86;0.93;0.97;1" dur="5s" repeatCount="indefinite"/>
-            </line>
-            <g opacity="0">
-              <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.7;0.75;0.92;0.96;1" dur="5s" repeatCount="indefinite"/>
-              <rect x="44" y="46" width="18" height="7" fill="#b54a1a" rx="1"/>
-              <text x="53" y="51.5" text-anchor="middle" font-size="3.8" fill="#fafaf7" font-family="monospace" font-weight="bold" letter-spacing="0.4">+ NEW</text>
-            </g>
             <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">CONTINUAL · t → ∞</text>
           </svg>
           <div class="thumb-cap">Paper 01</div>
@@ -851,11 +717,6 @@
             <g stroke="#1c1814" stroke-width="0.5" fill="none" opacity="0.7">
               <rect x="6" y="18" width="18" height="22"/><rect x="26" y="18" width="18" height="22"/><rect x="46" y="18" width="18" height="22"/><rect x="66" y="18" width="18" height="22"/><rect x="86" y="18" width="18" height="22"/>
             </g>
-            <g fill="#1c1814">
-              <circle cx="9" cy="22" r="0.7"/><circle cx="14" cy="26" r="0.7"/><circle cx="11" cy="30" r="0.7"/><circle cx="18" cy="32" r="0.7"/><circle cx="13" cy="36" r="0.7"/><circle cx="20" cy="24" r="0.7"/><circle cx="16" cy="38" r="0.7"/>
-              <circle cx="30" cy="24" r="0.7"/><circle cx="36" cy="28" r="0.7"/><circle cx="33" cy="33" r="0.7"/><circle cx="40" cy="34" r="0.7"/><circle cx="37" cy="38" r="0.7"/>
-              <circle cx="51" cy="26" r="0.8"/><circle cx="56" cy="29" r="0.8"/><circle cx="53" cy="34" r="0.8"/><circle cx="59" cy="34" r="0.8"/>
-            </g>
             <rect x="69" y="22" width="12" height="14" fill="#7a1f17" rx="1"/>
             <rect x="89" y="22" width="12" height="14" fill="#7a1f17" rx="1" opacity="0.55"/>
             <g>
@@ -866,12 +727,6 @@
             <g stroke="#1c1814" stroke-width="0.5" fill="none">
               <line x1="10" y1="108" x2="112" y2="108"/>
               <line x1="10" y1="72" x2="10" y2="108"/>
-            </g>
-            <text x="6" y="78" font-size="4.5" fill="#7a6f5e" font-family="monospace">V</text>
-            <text x="112" y="116" font-size="4.5" fill="#7a6f5e" font-family="monospace" text-anchor="end">steps</text>
-            <g stroke="#e6e0d2" stroke-width="0.3">
-              <line x1="10" y1="84" x2="112" y2="84"/>
-              <line x1="10" y1="96" x2="112" y2="96"/>
             </g>
             <path id="dpath" d="M 10 102 Q 30 92 50 84 Q 65 80 75 82 Q 90 90 112 102" fill="none" stroke="#7a1f17" stroke-width="1.4"/>
             <circle cx="75" cy="82" r="3" fill="#7a1f17"/>
@@ -911,40 +766,18 @@
               </radialGradient>
             </defs>
             <g stroke="#e6e0d2" stroke-width="0.4">
-              <line x1="0" y1="30" x2="120" y2="30"/>
-              <line x1="0" y1="60" x2="120" y2="60"/>
-              <line x1="0" y1="90" x2="120" y2="90"/>
-              <line x1="30" y1="0" x2="30" y2="120"/>
-              <line x1="60" y1="0" x2="60" y2="120"/>
-              <line x1="90" y1="0" x2="90" y2="120"/>
+              <line x1="0" y1="30" x2="120" y2="30"/><line x1="0" y1="60" x2="120" y2="60"/><line x1="0" y1="90" x2="120" y2="90"/>
+              <line x1="30" y1="0" x2="30" y2="120"/><line x1="60" y1="0" x2="60" y2="120"/><line x1="90" y1="0" x2="90" y2="120"/>
             </g>
-            <g stroke="#1c1814" stroke-width="0.5" fill="none">
-              <line x1="6" y1="110" x2="20" y2="110"/>
-              <line x1="6" y1="110" x2="6" y2="96"/>
-            </g>
-            <text x="22" y="113" font-size="4.5" fill="#7a6f5e" font-family="monospace">φ₁</text>
-            <text x="2" y="93" font-size="4.5" fill="#7a6f5e" font-family="monospace">φ₂</text>
             <ellipse cx="42" cy="32" rx="18" ry="12" fill="url(#dec)"/>
             <ellipse cx="60" cy="92" rx="16" ry="11" fill="url(#dec)"/>
-            <ellipse cx="42" cy="32" rx="8" ry="5" fill="none" stroke="#7a6f5e" stroke-width="0.3" stroke-dasharray="1.5 1"/>
-            <ellipse cx="60" cy="92" rx="7" ry="4" fill="none" stroke="#7a6f5e" stroke-width="0.3" stroke-dasharray="1.5 1"/>
-            <text x="42" y="20" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">DECOY</text>
-            <text x="60" y="108" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">DECOY</text>
             <ellipse cx="96" cy="60" rx="22" ry="20" fill="url(#rew)"/>
-            <ellipse cx="96" cy="60" rx="14" ry="13" fill="none" stroke="#7a1f17" stroke-width="0.5" opacity="0.5"/>
-            <ellipse cx="96" cy="60" rx="8" ry="7" fill="none" stroke="#7a1f17" stroke-width="0.5" opacity="0.7"/>
             <text x="96" y="40" text-anchor="middle" font-size="6" fill="#7a1f17" font-family="monospace" font-weight="bold">V*</text>
             <circle cx="14" cy="60" r="3" fill="#1c1814"/>
-            <text x="14" y="74" text-anchor="middle" font-size="4.5" font-family="monospace" fill="#7a6f5e">s₀</text>
             <path id="lsvipath" d="M 14 60 Q 30 60 48 56 Q 64 50 78 56 Q 88 60 96 60" fill="none" stroke="#7a1f17" stroke-width="1.4" stroke-dasharray="3 1.8"/>
             <circle cx="96" cy="60" r="3" fill="#7a1f17"/>
             <g>
               <circle r="3" fill="#b54a1a">
-                <animateMotion dur="3.5s" repeatCount="indefinite">
-                  <mpath href="#lsvipath"/>
-                </animateMotion>
-              </circle>
-              <circle r="6" fill="none" stroke="#b54a1a" stroke-width="0.6" opacity="0.5">
                 <animateMotion dur="3.5s" repeatCount="indefinite">
                   <mpath href="#lsvipath"/>
                 </animateMotion>
@@ -970,49 +803,20 @@
       <article class="pub">
         <div class="pub-thumb">
           <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <text x="20" y="9" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">FIG.1</text>
             <g stroke="#1c1814" stroke-width="0.7" fill="none">
               <rect x="6" y="12" width="36" height="26"/>
-              <circle cx="16" cy="24" r="3.5"/>
-              <circle cx="16" cy="24" r="1.6"/>
-              <line x1="22" y1="20" x2="36" y2="20"/>
-              <line x1="22" y1="24" x2="38" y2="24"/>
-              <line x1="22" y1="28" x2="34" y2="28"/>
-              <line x1="16" y1="28" x2="16" y2="34"/>
-              <line x1="16" y1="34" x2="24" y2="34"/>
+              <circle cx="16" cy="24" r="3.5"/><circle cx="16" cy="24" r="1.6"/>
             </g>
-            <text x="100" y="9" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">ABSTRACT</text>
             <g stroke="#1c1814" stroke-width="0.6" fill="none">
               <rect x="78" y="12" width="36" height="26"/>
             </g>
-            <g stroke="#1c1814" stroke-width="0.5" opacity="0.85">
-              <line x1="82" y1="18" x2="110" y2="18"/>
-              <line x1="82" y1="22" x2="108" y2="22"/>
-              <line x1="82" y1="26" x2="110" y2="26"/>
-              <line x1="82" y1="30" x2="106" y2="30"/>
-              <line x1="82" y1="34" x2="110" y2="34"/>
-            </g>
-            <line x1="24" y1="40" x2="24" y2="54" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 1.5"/>
-            <polygon points="24,56 21,52 27,52" fill="#1c1814"/>
-            <text x="24" y="49" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" font-weight="bold">ViT</text>
-            <line x1="96" y1="40" x2="96" y2="54" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 1.5"/>
-            <polygon points="96,56 93,52 99,52" fill="#1c1814"/>
-            <text x="96" y="49" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" font-weight="bold">BERT</text>
             <ellipse cx="60" cy="80" rx="50" ry="18" fill="none" stroke="#1c1814" stroke-width="0.6" stroke-dasharray="2 2"/>
-            <text x="60" y="105" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">SHARED EMBEDDING</text>
             <circle cx="24" cy="80" r="3.2" fill="#7a1f17">
               <animate attributeName="cx" values="24;55;55;24;24" keyTimes="0;0.4;0.7;0.95;1" dur="4s" repeatCount="indefinite"/>
             </circle>
             <circle cx="96" cy="80" r="3.2" fill="#b54a1a">
               <animate attributeName="cx" values="96;65;65;96;96" keyTimes="0;0.4;0.7;0.95;1" dur="4s" repeatCount="indefinite"/>
             </circle>
-            <line x1="55" y1="80" x2="65" y2="80" stroke="#7a1f17" stroke-width="1.4" opacity="0">
-              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.7;0.75" dur="4s" repeatCount="indefinite"/>
-            </line>
-            <text x="60" y="76" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" font-weight="bold" opacity="0">
-              sim 0.87
-              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.7;0.75" dur="4s" repeatCount="indefinite"/>
-            </text>
             <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" font-weight="bold" letter-spacing="0.5">↑ MATCH</text>
           </svg>
           <div class="thumb-cap">Paper 05</div>
@@ -1050,11 +854,6 @@
               <rect x="86" y="38" width="28" height="12" fill="none" stroke="#1c1814" stroke-width="0.6" rx="1"/>
               <text x="100" y="46.5" text-anchor="middle" font-size="5.5" fill="#1c1814" font-family="monospace">Q₃</text>
             </g>
-            <g stroke="#1c1814" stroke-width="0.5" fill="none" stroke-dasharray="1.5 1.5">
-              <line x1="20" y1="50" x2="20" y2="62"/>
-              <line x1="60" y1="50" x2="60" y2="62"/>
-              <line x1="100" y1="50" x2="100" y2="62"/>
-            </g>
             <g>
               <rect x="10" y="62" width="20" height="14" fill="#7a1f17" rx="1"/>
               <text x="20" y="72" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold">YES</text>
@@ -1063,31 +862,11 @@
               <rect x="90" y="62" width="20" height="14" fill="#7a1f17" rx="1"/>
               <text x="100" y="72" text-anchor="middle" font-size="6" fill="#fafaf7" font-family="monospace" font-weight="bold">YES</text>
             </g>
-            <text x="6" y="86" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">CONTRADICTION MATRIX</text>
-            <g>
-              <rect x="36" y="90" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="46" y="90" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="56" y="90" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="36" y="100" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="46" y="100" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="56" y="100" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="36" y="110" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="46" y="110" width="9" height="9" fill="#7a1f17" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="56" y="110" width="9" height="9" fill="#fafaf7" stroke="#1c1814" stroke-width="0.4"/>
-            </g>
-            <g font-family="monospace" font-size="4.5" fill="#7a6f5e">
-              <text x="34" y="96" text-anchor="end">Q₁</text>
-              <text x="34" y="106" text-anchor="end">Q₂</text>
-              <text x="34" y="116" text-anchor="end">Q₃</text>
-            </g>
             <g>
               <rect x="74" y="96" width="40" height="16" fill="none" stroke="#7a1f17" stroke-width="0.7" rx="1"/>
               <text x="94" y="103" text-anchor="middle" font-size="4.5" fill="#7a1f17" font-family="monospace" letter-spacing="0.3">CONTRADICT</text>
               <text x="94" y="110" text-anchor="middle" font-size="6" fill="#7a1f17" font-family="monospace" font-weight="bold">66%</text>
             </g>
-            <line x1="65" y1="100" x2="73" y2="100" stroke="#7a1f17" stroke-width="0.8">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
-            </line>
           </svg>
           <div class="thumb-cap">Paper 06</div>
         </div>
@@ -1104,53 +883,22 @@
       <article class="pub">
         <div class="pub-thumb">
           <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <text x="6" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">SCALE</text>
-            <text x="114" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">VLM PROBE</text>
             <rect x="8" y="16" width="34" height="34" fill="none" stroke="#1c1814" stroke-width="0.6"/>
             <g fill="#7a1f17">
-              <rect x="10" y="18" width="6" height="6" opacity="0.3"/><rect x="16" y="18" width="6" height="6" opacity="0.7"/><rect x="22" y="18" width="6" height="6" opacity="0.4"/><rect x="28" y="18" width="6" height="6" opacity="0.5"/><rect x="34" y="18" width="6" height="6" opacity="0.2"/>
-              <rect x="10" y="24" width="6" height="6" opacity="0.5"/><rect x="16" y="24" width="6" height="6" opacity="0.85"/><rect x="22" y="24" width="6" height="6" opacity="0.9"/><rect x="28" y="24" width="6" height="6" opacity="0.6"/><rect x="34" y="24" width="6" height="6" opacity="0.3"/>
-              <rect x="10" y="30" width="6" height="6" opacity="0.4"/><rect x="16" y="30" width="6" height="6" opacity="0.7"/><rect x="22" y="30" width="6" height="6" opacity="0.5"/><rect x="28" y="30" width="6" height="6" opacity="0.4"/><rect x="34" y="30" width="6" height="6" opacity="0.25"/>
-              <rect x="10" y="36" width="6" height="6" opacity="0.3"/><rect x="16" y="36" width="6" height="6" opacity="0.4"/><rect x="22" y="36" width="6" height="6" opacity="0.5"/><rect x="28" y="36" width="6" height="6" opacity="0.35"/><rect x="34" y="36" width="6" height="6" opacity="0.2"/>
-              <rect x="10" y="42" width="6" height="6" opacity="0.2"/><rect x="16" y="42" width="6" height="6" opacity="0.3"/><rect x="22" y="42" width="6" height="6" opacity="0.35"/><rect x="28" y="42" width="6" height="6" opacity="0.25"/><rect x="34" y="42" width="6" height="6" opacity="0.2"/>
+              <rect x="10" y="18" width="6" height="6" opacity="0.3"/><rect x="16" y="18" width="6" height="6" opacity="0.7"/><rect x="22" y="18" width="6" height="6" opacity="0.4"/>
+              <rect x="10" y="24" width="6" height="6" opacity="0.5"/><rect x="16" y="24" width="6" height="6" opacity="0.85"/><rect x="22" y="24" width="6" height="6" opacity="0.9"/>
             </g>
-            <text x="25" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₁ 14×14</text>
             <rect x="50" y="20" width="26" height="26" fill="none" stroke="#1c1814" stroke-width="0.6"/>
-            <g fill="#7a1f17">
-              <rect x="52" y="22" width="6" height="6" opacity="0.5"/><rect x="58" y="22" width="6" height="6" opacity="0.85"/><rect x="64" y="22" width="6" height="6" opacity="0.7"/><rect x="70" y="22" width="6" height="6" opacity="0.3"/>
-              <rect x="52" y="28" width="6" height="6" opacity="0.7"/><rect x="58" y="28" width="6" height="6" opacity="0.95"/><rect x="64" y="28" width="6" height="6" opacity="0.8"/><rect x="70" y="28" width="6" height="6" opacity="0.4"/>
-              <rect x="52" y="34" width="6" height="6" opacity="0.4"/><rect x="58" y="34" width="6" height="6" opacity="0.6"/><rect x="64" y="34" width="6" height="6" opacity="0.5"/><rect x="70" y="34" width="6" height="6" opacity="0.35"/>
-              <rect x="52" y="40" width="6" height="6" opacity="0.3"/><rect x="58" y="40" width="6" height="6" opacity="0.4"/><rect x="64" y="40" width="6" height="6" opacity="0.45"/><rect x="70" y="40" width="6" height="6" opacity="0.3"/>
-            </g>
-            <text x="63" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₂ 28×28</text>
             <rect x="86" y="22" width="22" height="22" fill="none" stroke="#1c1814" stroke-width="0.6"/>
-            <g fill="#7a1f17">
-              <rect x="88" y="24" width="6" height="6" opacity="0.85"/><rect x="94" y="24" width="6" height="6" opacity="0.95"/><rect x="100" y="24" width="6" height="6" opacity="0.6"/>
-              <rect x="88" y="30" width="6" height="6" opacity="0.95"/><rect x="94" y="30" width="6" height="6" opacity="0.5"/><rect x="100" y="30" width="6" height="6" opacity="0.4"/>
-              <rect x="88" y="36" width="6" height="6" opacity="0.4"/><rect x="94" y="36" width="6" height="6" opacity="0.5"/><rect x="100" y="36" width="6" height="6" opacity="0.6"/>
-            </g>
-            <text x="97" y="58" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">L₃ 56×56</text>
-            <g stroke="#7a6f5e" stroke-width="0.4" fill="none" opacity="0.5">
-              <line x1="42" y1="33" x2="50" y2="33"/>
-              <line x1="76" y1="33" x2="86" y2="33"/>
-              <polygon points="48,31 50,33 48,35" fill="#7a6f5e"/>
-              <polygon points="84,31 86,33 84,35" fill="#7a6f5e"/>
-            </g>
             <g stroke="#1c1814" stroke-width="0.5" fill="none">
               <line x1="10" y1="98" x2="110" y2="98"/>
               <line x1="10" y1="65" x2="10" y2="98"/>
             </g>
-            <text x="6" y="71" font-size="4.5" fill="#7a6f5e" font-family="monospace">acc</text>
-            <text x="110" y="106" font-size="4.5" fill="#7a6f5e" font-family="monospace" text-anchor="end">scale →</text>
             <g fill="#7a1f17">
               <rect x="22" y="86" width="14" height="12"/>
               <rect x="56" y="74" width="14" height="24"/>
               <rect x="90" y="80" width="14" height="18"/>
             </g>
-            <line x1="22" y1="68" x2="22" y2="72" stroke="#7a1f17" stroke-width="1">
-              <animate attributeName="x1" values="22;56;90;22" dur="3s" repeatCount="indefinite"/>
-              <animate attributeName="x2" values="22;56;90;22" dur="3s" repeatCount="indefinite"/>
-            </line>
             <text x="60" y="116" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">DIAGNOSTIC PROBE</text>
           </svg>
           <div class="thumb-cap">Paper 07</div>
@@ -1168,32 +916,6 @@
       <article class="pub">
         <div class="pub-thumb">
           <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <text x="6" y="11" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">CANDIDATE POOL</text>
-            <g>
-              <rect x="6" y="16" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="20" y="16" width="14" height="8" fill="#1c1814" opacity="0.18"/>
-              <text x="27" y="22" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.42</text>
-              <rect x="40" y="16" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="54" y="16" width="14" height="8" fill="#7a1f17" opacity="0.85"/>
-              <text x="61" y="22" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.91</text>
-              <rect x="6" y="28" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="20" y="28" width="14" height="8" fill="#7a1f17" opacity="0.7"/>
-              <text x="27" y="34" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.78</text>
-              <rect x="40" y="28" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="54" y="28" width="14" height="8" fill="#1c1814" opacity="0.22"/>
-              <text x="61" y="34" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.31</text>
-              <rect x="6" y="40" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="20" y="40" width="14" height="8" fill="#7a1f17" opacity="0.55"/>
-              <text x="27" y="46" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">0.66</text>
-              <rect x="40" y="40" width="12" height="8" fill="none" stroke="#1c1814" stroke-width="0.5"/>
-              <rect x="54" y="40" width="14" height="8" fill="#1c1814" opacity="0.15"/>
-              <text x="61" y="46" text-anchor="middle" font-size="4" fill="#1c1814" font-family="monospace">0.18</text>
-            </g>
-            <g stroke="#7a1f17" stroke-width="0.6" fill="none" stroke-dasharray="2 1.5" opacity="0.7">
-              <line x1="55" y1="20" x2="86" y2="68"/>
-              <line x1="27" y1="32" x2="86" y2="74"/>
-              <line x1="27" y1="44" x2="86" y2="80"/>
-            </g>
             <g>
               <rect x="76" y="16" width="38" height="68" fill="none" stroke="#1c1814" stroke-width="0.6"/>
               <text x="95" y="14" text-anchor="middle" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">TOP-K</text>
@@ -1201,14 +923,6 @@
               <text x="95" y="28" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">★ 0.91</text>
               <rect x="80" y="34" width="30" height="8" fill="#7a1f17" opacity="0.9"/>
               <text x="95" y="40" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold">★ 0.78</text>
-              <rect x="80" y="46" width="30" height="8" fill="#7a1f17" opacity="0.75">
-                <animate attributeName="opacity" values="0;0.75;0.75;0;0" keyTimes="0;0.4;0.85;0.95;1" dur="3.5s" repeatCount="indefinite"/>
-              </rect>
-              <text x="95" y="52" text-anchor="middle" font-size="4" fill="#fafaf7" font-family="monospace" font-weight="bold" opacity="0">★ 0.66
-                <animate attributeName="opacity" values="0;0.95;0.95;0;0" keyTimes="0;0.4;0.85;0.95;1" dur="3.5s" repeatCount="indefinite"/>
-              </text>
-              <rect x="80" y="58" width="30" height="8" fill="none" stroke="#1c1814" stroke-width="0.4" stroke-dasharray="1.5 1.5"/>
-              <rect x="80" y="70" width="30" height="8" fill="none" stroke="#1c1814" stroke-width="0.4" stroke-dasharray="1.5 1.5"/>
             </g>
             <text x="6" y="92" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">BUDGET</text>
             <rect x="6" y="96" width="108" height="8" fill="none" stroke="#1c1814" stroke-width="0.6"/>
@@ -1217,8 +931,6 @@
             </rect>
             <line x1="74" y1="94" x2="74" y2="106" stroke="#7a1f17" stroke-width="1"/>
             <text x="74" y="114" text-anchor="middle" font-size="4" fill="#7a1f17" font-family="monospace">B*</text>
-            <text x="6" y="118" font-size="4" fill="#7a6f5e" font-family="monospace">0</text>
-            <text x="114" y="118" font-size="4" fill="#7a6f5e" font-family="monospace" text-anchor="end">N</text>
           </svg>
           <div class="thumb-cap">Paper 08</div>
         </div>
@@ -1235,47 +947,25 @@
       <article class="pub">
         <div class="pub-thumb">
           <svg class="thumb" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <text x="6" y="12" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4">METRICS</text>
-            <text x="114" y="12" font-size="4.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.4" text-anchor="end">w · m</text>
             <g>
               <text x="6" y="26" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">FACT</text>
               <rect x="32" y="22" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
               <rect x="32" y="22" width="42" height="6" fill="#7a1f17"/>
-              <text x="86" y="26" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.84</text>
               <text x="6" y="36" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">CALIB</text>
               <rect x="32" y="32" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
               <rect x="32" y="32" width="32" height="6" fill="#7a1f17"/>
-              <text x="86" y="36" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.64</text>
               <text x="6" y="46" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">CONS</text>
               <rect x="32" y="42" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
               <rect x="32" y="42" width="46" height="6" fill="#7a1f17"/>
-              <text x="86" y="46" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.92</text>
-              <text x="6" y="56" font-size="4.5" fill="#1c1814" font-family="monospace" letter-spacing="0.3">GRND</text>
-              <rect x="32" y="52" width="50" height="6" fill="none" stroke="#1c1814" stroke-width="0.4"/>
-              <rect x="32" y="52" width="38" height="6" fill="#7a1f17"/>
-              <text x="86" y="56" font-size="4.5" fill="#1c1814" font-family="monospace" font-weight="bold">.76</text>
-            </g>
-            <g stroke="#1c1814" stroke-width="0.4" fill="none" stroke-dasharray="1.5 1.5" opacity="0.5">
-              <line x1="100" y1="25" x2="60" y2="80"/>
-              <line x1="100" y1="35" x2="60" y2="80"/>
-              <line x1="100" y1="45" x2="60" y2="80"/>
-              <line x1="100" y1="55" x2="60" y2="80"/>
             </g>
             <g>
               <path d="M 30 88 A 30 30 0 0 1 90 88" fill="none" stroke="#1c1814" stroke-width="1"/>
-              <line x1="30" y1="88" x2="33" y2="84" stroke="#1c1814" stroke-width="0.5"/>
-              <line x1="60" y1="58" x2="60" y2="62" stroke="#1c1814" stroke-width="0.5"/>
-              <line x1="90" y1="88" x2="87" y2="84" stroke="#1c1814" stroke-width="0.5"/>
-              <text x="28" y="96" font-size="4" fill="#7a6f5e" font-family="monospace" text-anchor="end">0</text>
-              <text x="60" y="55" text-anchor="middle" font-size="4" fill="#7a6f5e" font-family="monospace">.5</text>
-              <text x="92" y="96" font-size="4" fill="#7a6f5e" font-family="monospace">1</text>
               <line x1="60" y1="88" stroke="#7a1f17" stroke-width="2.4" stroke-linecap="round" x2="60" y2="64">
                 <animateTransform attributeName="transform" type="rotate" values="-72 60 88;48 60 88;-72 60 88" dur="3.5s" repeatCount="indefinite"/>
               </line>
               <circle cx="60" cy="88" r="2.5" fill="#1c1814"/>
             </g>
             <rect x="42" y="100" width="36" height="14" fill="none" stroke="#7a1f17" stroke-width="0.7" rx="1"/>
-            <text x="60" y="105" text-anchor="middle" font-size="3.5" fill="#7a6f5e" font-family="monospace" letter-spacing="0.5">RELIABILITY</text>
             <text x="60" y="112" text-anchor="middle" font-size="6.5" fill="#7a1f17" font-family="monospace" font-weight="bold" letter-spacing="0.4">0.79</text>
           </svg>
           <div class="thumb-cap">Paper 09</div>
@@ -1294,7 +984,7 @@
 
   <!-- VISITORS -->
   <section id="visitors">
-    <div class="section-meta">§ IV — Visitors</div>
+    <div class="section-meta">§ III — Visitors</div>
     <h2 class="section-title">Around <span class="italic">the</span> World</h2>
     <div class="section-rule"></div>
 
@@ -1303,14 +993,12 @@
         <div class="visitor-stat">
           <div class="stat-label">Profile Views</div>
         </div>
-
         <p class="visitor-note">
           Each marker on the map is a real visitor's approximate region — anonymous, just a pin on a country. Full stats at <a href="https://mapmyvisitors.com/web/1c4eh" target="_blank" rel="noopener">mapmyvisitors.com</a>.
         </p>
       </div>
 
       <div class="visitors-map">
-        <!-- mapmyvisitors.com tracker — stats dashboard at https://mapmyvisitors.com/web/1c4eh -->
         <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=tYKrTleIzEG_M6tzoWmIiZKf5IJJPr5G469r5BeC5O0&cl=ffffff&w=a"></script>
       </div>
     </div>
@@ -1346,7 +1034,7 @@
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.pub-group, .interests, .affil-grid, .visitors-grid, .coffee, .colophon').forEach(el => {
+  document.querySelectorAll('.pub-group, .affil-grid, .visitors-grid, .coffee, .colophon').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(8px)';
     obs.observe(el);
