@@ -155,16 +155,7 @@
     border-radius: 2px;
     display: block;
   }
-  .photo-meta {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mute);
-  }
+
 
   /* Section */
   section { margin-top: 56px; }
@@ -469,20 +460,18 @@
     border: 1px solid var(--rule);
     border-radius: 3px;
     padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    height: 160px;
-    max-width: 520px;
+    height: 200px;
+    max-width: 540px;
   }
   .visitors-map-full > * { width: 100%; max-height: 100%; }
   .visitors-map-full img,
   .visitors-map-full iframe,
   .visitors-map-full canvas {
-    max-width: 100%;
-    max-height: 144px;
+    width: 100%;
+    max-height: 184px;
     object-fit: contain;
+    display: block;
   }
 
   /* Coffee CTA */
@@ -557,6 +546,22 @@
     border-radius: 0;
   }
 
+  .photo-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #2563a8;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+  .photo-name-italic {
+    font-style: normal;
+    font-weight: 700;
+    color: #2563a8;
+  }
+
   ::selection { background: var(--highlight); color: var(--ink); }
 
   @media (max-width: 720px) {
@@ -602,7 +607,6 @@
   <!-- HERO -->
   <header class="hero">
     <div>
-      <h1 class="name reveal d1">Rohit <span class="italic">Salla</span></h1>
       <p class="bio reveal d2">
         Hello! I am a Master's student in Computer Engineering at <a href="https://vt.edu/" target="_blank" rel="noopener">Virginia Tech</a>, where I work on reinforcement learning for language models and robot control at <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">TEALab</a> with <a href="https://simonstepputtis.com/" target="_blank" rel="noopener">Simon Stepputtis</a>.
       </p>
@@ -619,12 +623,9 @@
     </div>
 
     <div class="reveal d2">
+      <p class="photo-name">Rohit <span class="photo-name-italic">Salla</span></p>
       <div class="photo-frame">
         <img src="profile.jpg" alt="Rohit Salla" />
-      </div>
-      <div class="photo-meta">
-        <span>Rohit Salla</span>
-        <span>Anno 2026</span>
       </div>
     </div>
   </header>
@@ -1110,6 +1111,7 @@
   <!-- SERVICES -->
   <section id="services">
     <div class="section-meta">§ IV — Academic Service</div>
+    <h2 class="section-title"><span class="italic">Service</span></h2>
     <div class="section-rule"></div>
     <div class="section-meta" style="margin-bottom: 12px;">Reviewer</div>
     <div class="services-list">
@@ -1119,7 +1121,7 @@
     </div>
   </section>
 
-  <!-- VISITORS -->
+  <!-- VISITORS v2 -->
   <section id="visitors">
     <div class="section-meta">§ V — Visitors</div>
     <h2 class="section-title">Around <span class="italic">the</span> World</h2>
