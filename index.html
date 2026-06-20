@@ -464,39 +464,7 @@
   }
 
   /* VISITORS */
-  .visitors-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    align-items: stretch;
-  }
-  .visitors-info {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--accent);
-    border-radius: 3px;
-    padding: 24px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .visitor-stat .stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mute);
-    margin-bottom: 10px;
-  }
-  .visitor-note {
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--mute);
-    margin: 0;
-  }
-  .visitors-map {
+  .visitors-map-full {
     background: var(--paper);
     border: 1px solid var(--rule);
     border-radius: 3px;
@@ -505,14 +473,15 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 200px;
+    height: 260px;
+    width: 100%;
   }
-  .visitors-map > * { width: 100%; max-height: 100%; }
-  .visitors-map img,
-  .visitors-map iframe,
-  .visitors-map canvas {
+  .visitors-map-full > * { width: 100%; max-height: 100%; }
+  .visitors-map-full img,
+  .visitors-map-full iframe,
+  .visitors-map-full canvas {
     max-width: 100%;
-    max-height: 180px;
+    max-height: 240px;
     object-fit: contain;
   }
 
@@ -601,7 +570,7 @@
     h2.section-title { font-size: 26px; }
     .eyebrow nav { display: none; }
     .affil-grid { grid-template-columns: repeat(2, 1fr); }
-    .visitors-grid { grid-template-columns: 1fr; }
+    
     .news-item { grid-template-columns: 90px 1fr; gap: 12px; }
   }
 
@@ -1141,7 +1110,6 @@
   <!-- SERVICES -->
   <section id="services">
     <div class="section-meta">§ IV — Academic Service</div>
-    <h2 class="section-title">Reviewing <span class="italic">&amp;</span> Service</h2>
     <div class="section-rule"></div>
     <div class="section-meta" style="margin-bottom: 12px;">Reviewer</div>
     <div class="services-list">
@@ -1157,16 +1125,8 @@
     <h2 class="section-title">Around <span class="italic">the</span> World</h2>
     <div class="section-rule"></div>
 
-    <div class="visitors-grid">
-      <div class="visitors-info">
-        <div class="visitor-stat">
-          <div class="stat-label">Profile Views</div>
-        </div>
-      </div>
-
-      <div class="visitors-map">
-        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=tYKrTleIzEG_M6tzoWmIiZKf5IJJPr5G469r5BeC5O0&cl=ffffff&w=a"></script>
-      </div>
+    <div class="visitors-map-full">
+      <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=tYKrTleIzEG_M6tzoWmIiZKf5IJJPr5G469r5BeC5O0&cl=ffffff&w=a"></script>
     </div>
   </section>
 
@@ -1200,7 +1160,7 @@
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.pub-group, .affil-grid, .news-scroll, .visitors-grid, .coffee, .colophon, .services-list').forEach(el => {
+  document.querySelectorAll('.pub-group, .affil-grid, .news-scroll, .visitors-map-full, .coffee, .colophon, .services-list').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(8px)';
     obs.observe(el);
